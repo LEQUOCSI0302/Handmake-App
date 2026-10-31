@@ -1,0 +1,192 @@
+.header,
+.header * {
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e8ddd3;
+    font-family: Arial, sans-serif;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Logo */
+.header-logo {
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+/* Menu */
+.header-menu {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 24px;
+}
+
+.header-menu a {
+    position: relative;
+    padding: 12px 0;
+
+    color: #8b6b50;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    transition: color 0.2s ease;
+}
+
+.header-menu a:hover,
+.header-menu a:focus-visible,
+.header-menu a.active {
+    color: #543b28;
+}
+
+/* Gạch chân */
+.header-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #8b6b50;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.header-menu a:hover::after,
+.header-menu a:focus-visible::after,
+.header-menu a.active::after {
+    transform: scaleX(1);
+}
+
+.menu-arrow {
+    margin-left: 4px;
+    color: inherit;
+}
+
+/* Nút chức năng */
+.header-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-actions a {
+    width: 44px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #8b6b50;
+    text-decoration: none;
+    font-size: 23px;
+
+    transition: color 0.2s ease;
+}
+
+.header-actions a:hover,
+.header-actions a:focus-visible {
+    color: #543b28;
+}
+
+.header-actions a + a {
+    border-left: 1px solid #e8ddd3;
+}
+
+/* Kính lúp */
+.search-icon {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid currentColor;
+    border-radius: 50%;
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    right: -7px;
+    bottom: -4px;
+    width: 10px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+}
+
+/* Tablet và điện thoại */
+@media (max-width: 1000px) {
+    .header-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 16px;
+        padding: 10px 16px;
+    }
+
+    .header-logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-menu {
+        order: 3;
+        flex: 0 0 100%;
+        gap: 4px 20px;
+        padding-bottom: 8px;
+    }
+
+    .header-menu a {
+        font-size: 14px;
+    }
+}
+.header-menu:has(a:hover) a.active:not(:hover)::after {
+    transform: scaleX(0);
+}
+.header-menu:has(a:focus-visible) a.active:not(:focus-visible)::after {
+    transform: scaleX(0);
+}
+@media (max-width: 480px) {
+    .header-menu {
+        gap: 4px 16px;
+    }
+
+    .header-menu a {
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+
+    .header-actions a {
+        width: 38px;
+    }
+}
