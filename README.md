@@ -1,32 +1,9 @@
-# React + TypeScript + Vite
+# Handmake - Shop đồ gỗ thủ công
+Website chỉ có FrontEnd về bán đồ gỗ handmade.
+Phần FrontEnd được xây dựng bằng React + TypeScript. Không có backend, tất cả dữ liệu sản phẩm được sử dụng bằng Fake API dựng bằng Mockoon chạy trên máy local.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Cách sử dụng Mockoon cho Fake API
+1. Đầu tiên là tải ứng dụng Mockoon theo trang web và tải theo hệ điều hành: https://mockoon.com/download/
+2. Sau tải xong thì mở Mockoon chọn Open Environment rồi chọn đúng file mock/handmake-api.json trong thư mục project rồi bấm Start.
+3. Rồi npm run dev.
+Lưu ý: Nhớ mỗi lần pull code về phải làm lại hành động thứ 2.
