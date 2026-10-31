@@ -19,40 +19,41 @@ const factors = [
 
 function AboutPage() {
     return (
-        <main className="about-page">
-            <div className="container">
-                <h1 className="about-title">Về chúng tôi</h1>
+        <>
+            <main className="about-page">
+                <div className="container">
+                    <h1 className="about-title">Về chúng tôi</h1>
 
-                <p>Handmake, một cửa hàng online yêu cái đẹp và sự sáng tạo.</p>
-                <p>
-                    Các sản phẩm của Handmake hướng đến các bạn trẻ yêu thích phụ kiện
-                    xinh xắn, mang dấu ấn riêng.
-                </p>
-                <p>
-                    Đến với Handmake, bạn sẽ cảm nhận được sự tỉ mỉ trong từng món đồ
-                    được làm bằng tay. Mỗi thiết kế đều bắt nguồn từ cảm hứng và niềm đam
-                    mê của chúng mình.
-                </p>
-
-                <h4 className="about-subtitle">Các yếu tố tạo nên Handmake</h4>
-
-                {
-
-                }
-                {factors.map((item) => (
-                    <p key={item.title}>
-                        {item.title}: {item.content}
+                    <p>Handmake, một cửa hàng online yêu cái đẹp và sự sáng tạo.</p>
+                    <p>
+                        Các sản phẩm của Handmake hướng đến các bạn trẻ yêu thích phụ kiện
+                        xinh xắn, mang dấu ấn riêng.
                     </p>
-                ))}
+                    <p>
+                        Đến với Handmake, bạn sẽ cảm nhận được sự tỉ mỉ trong từng món đồ
+                        được làm bằng tay. Mỗi thiết kế đều bắt nguồn từ cảm hứng và niềm đam
+                        mê của chúng mình.
+                    </p>
 
-                <img
-                    className="about-image"
-                    src="https://placehold.co/300x300/fde8e8/fbb5b5?text=Handmake"
-                    alt="Sản phẩm handmade của cửa hàng"
-                />
-            </div>
-        </main>
-    );
+                    <h4 className="about-subtitle">Các yếu tố tạo nên Handmake</h4>
+
+                    {
+
+                    }
+                    {factors.map((item) => (
+                        <p key={item.title}>
+                            {item.title}: {item.content}
+                        </p>
+                    ))}
+
+                    <img
+                        className="about-image"
+                        src="https://placehold.co/300x300/fde8e8/fbb5b5?text=Handmake"
+                        alt="Sản phẩm handmade của cửa hàng"
+                    />
+                </div>
+            </main>
+        </>);
 }
 
 export default AboutPage;
