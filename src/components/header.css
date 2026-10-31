@@ -3,11 +3,34 @@
     box-sizing: border-box;
 }
 
+/* Header và bảng màu */
 .header {
+    --cream: #e7decf;
+    --latte: #d0bca1;
+    --biscotti: #dac09b;
+    --toffee: #9f815b;
+    --cocoa: #81614a;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #e8ddd3;
+    background: var(--cream);
+    border-bottom: 1px solid var(--latte);
     font-family: Arial, sans-serif;
+
+    transition:
+            background-color 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+/* Nền trong mờ khi cuộn xuống */
+.header.header-scrolled {
+    background: rgba(231, 222, 207, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(129, 97, 74, 0.15);
 }
 
 .header-container {
@@ -45,25 +68,22 @@
     gap: 8px 24px;
 }
 
+/* Liên kết */
+.header-menu a,
+.header-actions a {
+    color: var(--cocoa);
+    text-decoration: none;
+}
+
 .header-menu a {
     position: relative;
     padding: 12px 0;
 
-    color: #8b6b50;
-    text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
-
-    transition: color 0.2s ease;
-}
-
-.header-menu a:hover,
-.header-menu a:focus-visible,
-.header-menu a.active {
-    color: #543b28;
 }
 
 /* Gạch chân */
@@ -72,9 +92,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
+
     width: 100%;
     height: 3px;
-    background: #8b6b50;
+    background: var(--toffee);
 
     transform: scaleX(0);
     transform-origin: left;
@@ -85,6 +106,12 @@
 .header-menu a:focus-visible::after,
 .header-menu a.active::after {
     transform: scaleX(1);
+}
+
+/* Ẩn gạch chân mục đang chọn khi tương tác với mục khác */
+.header-menu:has(a:hover) a.active:not(:hover)::after,
+.header-menu:has(a:focus-visible) a.active:not(:focus-visible)::after {
+    transform: scaleX(0);
 }
 
 .menu-arrow {
@@ -107,23 +134,20 @@
     align-items: center;
     justify-content: center;
 
-    color: #8b6b50;
-    text-decoration: none;
     font-size: 23px;
-
-    transition: color 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .header-actions a:hover,
 .header-actions a:focus-visible {
-    color: #543b28;
+    background-color: var(--biscotti);
 }
 
 .header-actions a + a {
-    border-left: 1px solid #e8ddd3;
+    border-left: 1px solid var(--latte);
 }
 
-/* Kính lúp */
+/* Kính lúp nếu dùng biểu tượng vẽ bằng CSS */
 .search-icon {
     position: relative;
     display: block;
@@ -138,6 +162,7 @@
     position: absolute;
     right: -7px;
     bottom: -4px;
+
     width: 10px;
     height: 3px;
     border-radius: 2px;
@@ -145,7 +170,7 @@
     transform: rotate(45deg);
 }
 
-/* Tablet và điện thoại */
+/* Tablet */
 @media (max-width: 1000px) {
     .header-container {
         flex-wrap: wrap;
@@ -170,12 +195,8 @@
         font-size: 14px;
     }
 }
-.header-menu:has(a:hover) a.active:not(:hover)::after {
-    transform: scaleX(0);
-}
-.header-menu:has(a:focus-visible) a.active:not(:focus-visible)::after {
-    transform: scaleX(0);
-}
+
+/* Điện thoại */
 @media (max-width: 480px) {
     .header-menu {
         gap: 4px 16px;

@@ -1,4 +1,5 @@
 import "./header.css";
+import useScroll from "./useScroll";
 export default function Header() {
     return (
         <header className="header">
@@ -8,7 +9,7 @@ export default function Header() {
                     <img src="/logo.png" alt="" />
                 </a>
 
-                {/* Menu */}
+                {/*Menu*/}
                 <nav className="header-menu">
                     <a href="/" className="active">Trang chủ</a>
                     <a href="/gioi-thieu">Giới thiệu</a>
@@ -20,7 +21,7 @@ export default function Header() {
                     <a href="/thanh-toan">Thanh toán</a>
                 </nav>
 
-                {/* Các nút bên phải */}
+                {/* */}
                 <div className="header-actions">
                     <a href="/tim-kiem" aria-label="Tìm kiếm">
                         <i className="fa-solid fa-magnifying-glass"></i>
