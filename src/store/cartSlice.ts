@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { Product } from "../services/mockData";
+import type { Product } from "../types/product";
 export const CART_STORAGE_KEY = "handmake-key";
 
 export interface CartItem {

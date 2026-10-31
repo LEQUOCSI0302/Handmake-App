@@ -1,70 +1,14 @@
 /* biến dùng chung*/
 :root {
-    --color-primary: #fbb5b5; /*hồng chủ đạo: tiêu đề, nút */
-    --color-text: #000000; /*chữ thường */
-    --color-price: #111111; /*giá sản phẩm */
-    --color-footer: #e7dddd; /*nền footer */
-    --color-border: rgba(0, 0, 0, 0.1);
-    --font-body: 'Quicksand', sans-serif;
-    --font-heading: 'Baloo 2', sans-serif;
-    --container-width: 1080px;
+    --cream: #e7decf;
+    --latte: #d0bca1;
+    --biscotti: #dac09b;
+    --toffee: #9f815b;
+    --cocoa: #81614a;
 }
 
 * {
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-text);
-    background: #ffffff;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-weight: 400;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-/*Khung nội dung căn giữa, rộng tối đa 1080px */
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/*Nút hồng dùng chung (ví dụ nút "MUA NGAY") */
-.btn-primary {
-    display: inline-block;
-    padding: 8px 20px;
-    border: none;
-    background: var(--color-primary);
-    color: #ffffff;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    opacity: 0.85;
+    padding: 0;
 }

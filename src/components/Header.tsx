@@ -25,9 +25,6 @@ export default function Header() {
 
                     <NavLink to="/san-pham">
                         Sản phẩm
-                        <span className="menu-arrow" aria-hidden="true">
-                            ⌄
-                        </span>
                     </NavLink>
 
                     <NavLink to="/blog">Blog</NavLink>
