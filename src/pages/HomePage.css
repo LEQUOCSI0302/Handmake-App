@@ -1,0 +1,25 @@
+.banner-handmake{
+    position: relative;
+    max-width: 100%;
+}
+.banner-handmake img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+
+}
+.banner-button{
+    position: absolute;
+    left: 20%;
+    bottom: 5%;
+    background: var(--toffee);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.banner-button:hover{
+    background: var(--cocoa);
+}
