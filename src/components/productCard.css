@@ -1,0 +1,116 @@
+/* Thẻ sản phẩm */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--latte);
+    border-radius: 16px;
+    background: white;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(129, 97, 74, 0.15);
+}
+
+.product-card-image {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    background: var(--cream);
+}
+
+.product-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card-sale {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: var(--cocoa);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.product-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 14px 16px 16px;
+}
+
+.product-card-category {
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--toffee);
+}
+
+.product-card-name {
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--cocoa);
+    text-decoration: none;
+}
+
+.product-card-name:hover {
+    text-decoration: underline;
+}
+
+.product-card-rating {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.product-card-rating i {
+    color: #e0a526;
+}
+
+/* Hàng cuối: giá bên trái, nút giỏ hàng bên phải */
+.product-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.product-card-price {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cocoa);
+}
+
+.product-card-old-price {
+    font-size: 13px;
+    color: #8a7a6e;
+    text-decoration: line-through;
+}
+
+.product-card-cart {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: var(--toffee);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.product-card-cart:hover {
+    background: var(--cocoa);
+}

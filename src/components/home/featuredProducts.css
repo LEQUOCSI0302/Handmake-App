@@ -1,0 +1,58 @@
+/* Hàng nút lọc danh mục */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.category-tab {
+    padding: 8px 20px;
+    border: 1px solid var(--latte);
+    border-radius: 50px;
+    background: white;
+    color: var(--cocoa);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.category-tab:hover {
+    background: var(--cream);
+}
+
+/* Nút đang được chọn */
+.category-tab.active {
+    border-color: var(--cocoa);
+    background: var(--cocoa);
+    color: white;
+}
+
+/* Lưới sản phẩm: 4 cột trên máy tính */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.featured-more {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Tablet: 3 cột */
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Điện thoại: 2 cột */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
