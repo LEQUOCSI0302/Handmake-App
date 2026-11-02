@@ -2,7 +2,7 @@ import "./home.css";
 
 type SectionTitleProps = {
     title: string;
-    subtitle?: string; // dấu ? nghĩa là không bắt buộc
+    subtitle?: string;
 };
 
 // Tiêu đề dùng chung cho các khu ở trang chủ
