@@ -5,11 +5,7 @@
 
 /* Header và bảng màu */
 .header {
-    --cream: #e7decf;
-    --latte: #d0bca1;
-    --biscotti: #dac09b;
-    --toffee: #9f815b;
-    --cocoa: #81614a;
+
 
     position: sticky;
     top: 0;
@@ -25,7 +21,6 @@
             box-shadow 0.3s ease;
 }
 
-/* Nền trong mờ khi cuộn xuống */
 .header.header-scrolled {
     background: rgba(231, 222, 207, 0.85);
     backdrop-filter: blur(12px);

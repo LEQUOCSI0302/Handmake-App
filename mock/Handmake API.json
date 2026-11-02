@@ -1,0 +1,94 @@
+{
+  "uuid": "42f5307b-6b43-4689-96b7-cdfc279a0143",
+  "lastMigration": 33,
+  "name": "Handmake API",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "674f04f6-7d65-4434-bde1-293582c6edf5",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "e3ea0039-a7b2-4f59-b113-a82894c0e0dd",
+          "body": "[{\"category\":\"Khay gỗ\",\"description\":\"Khay gỗ thủ công có tay cầm, dùng đựng bánh, trà và đồ ăn nhẹ.\",\"id\":1,\"image\":\"/images/khay-go-tay-cam.jpg\",\"name\":\"Khay Gỗ Có Tay Cầm\",\"oldPrice\":230000,\"price\":180000,\"rating\":4.8,\"stock\":25},{\"category\":\"Khay gỗ\",\"description\":\"Khay gỗ hình chữ nhật, bề mặt mài mịn, phù hợp bày biện bàn ăn và chụp ảnh sản phẩm.\",\"id\":2,\"image\":\"/images/khay-go-chu-nhat.jpg\",\"name\":\"Khay Gỗ Chữ Nhật\",\"oldPrice\":235000,\"price\":190000,\"rating\":4.9,\"stock\":18},{\"category\":\"Khay gỗ\",\"description\":\"Khay gỗ tần bì dáng tròn, vân gỗ tự nhiên, dùng đựng bánh và trái cây.\",\"id\":3,\"image\":\"/images/khay-go-tron.jpg\",\"name\":\"Khay Gỗ Tròn Tần Bì\",\"oldPrice\":220000,\"price\":160000,\"rating\":4.7,\"stock\":30},{\"category\":\"Thìa muỗng gỗ\",\"description\":\"Thìa muỗng gỗ tạo hình cành cây, nhẹ tay, dùng ăn cơm và trang trí bàn ăn.\",\"id\":4,\"image\":\"/images/thia-go-canh-cay.jpg\",\"name\":\"Thìa Muỗng Gỗ Cành Cây\",\"oldPrice\":49000,\"price\":36000,\"rating\":4.9,\"stock\":120},{\"category\":\"Thớt gỗ\",\"description\":\"Thớt gỗ tần bì dày dặn, dùng thái thực phẩm hằng ngày trong bếp.\",\"id\":5,\"image\":\"/images/thot-go-chu-nhat.jpg\",\"name\":\"Thớt Gỗ Tần Bì Chữ Nhật\",\"oldPrice\":199000,\"price\":150000,\"rating\":4.8,\"stock\":40},{\"category\":\"Thớt gỗ\",\"description\":\"Thớt gỗ tròn có rãnh hứng nước, tiện dùng cho trái cây và đồ ăn chín.\",\"id\":6,\"image\":\"/images/thot-go-tron.jpg\",\"name\":\"Thớt Gỗ Tròn Có Rãnh\",\"oldPrice\":175000,\"price\":135000,\"rating\":4.6,\"stock\":35},{\"category\":\"Đồ dùng bếp gỗ\",\"description\":\"Bộ 10 đôi đũa gỗ mun, đầu đũa mài nhẵn, cầm chắc tay.\",\"id\":7,\"image\":\"/images/dua-go-mun.jpg\",\"name\":\"Bộ Đũa Gỗ Mun 10 Đôi\",\"oldPrice\":60000,\"price\":45000,\"rating\":4.7,\"stock\":200},{\"category\":\"Thìa muỗng gỗ\",\"description\":\"Muỗng gỗ dừa nhỏ gọn, an toàn cho bát đĩa chống dính và dễ vệ sinh.\",\"id\":8,\"image\":\"/images/muong-go-dua.jpg\",\"name\":\"Muỗng Gỗ Dừa Ăn Cơm\",\"oldPrice\":35000,\"price\":25000,\"rating\":4.5,\"stock\":150},{\"category\":\"Đồ dùng bếp gỗ\",\"description\":\"Đĩa gỗ tròn cỡ nhỏ, dùng đựng bánh ngọt, đồ ăn vặt hoặc trang trí.\",\"id\":9,\"image\":\"/images/dia-go-tron.jpg\",\"name\":\"Đĩa Gỗ Tròn Nhỏ\",\"oldPrice\":120000,\"price\":89000,\"rating\":4.6,\"stock\":60},{\"category\":\"Trang trí gỗ\",\"description\":\"Hộp gỗ đựng trà có nắp đậy kín, chạm khắc tối giản, thích hợp làm quà tặng.\",\"id\":10,\"image\":\"/images/hop-go-dung-tra.jpg\",\"name\":\"Hộp Gỗ Đựng Trà\",\"oldPrice\":390000,\"price\":320000,\"rating\":4.9,\"stock\":12},{\"category\":\"Trang trí gỗ\",\"description\":\"Kệ gỗ treo tường 2 tầng, dùng trưng bày cây nhỏ, sách và đồ trang trí.\",\"id\":11,\"image\":\"/images/ke-go-treo-tuong.jpg\",\"name\":\"Kệ Gỗ Treo Tường 2 Tầng\",\"oldPrice\":550000,\"price\":450000,\"rating\":4.8,\"stock\":8},{\"category\":\"Đồ dùng bếp gỗ\",\"description\":\"Bộ 4 lót ly bằng gỗ, chống thấm và cách nhiệt cho ly trà, cà phê.\",\"id\":12,\"image\":\"/images/lot-ly-go.jpg\",\"name\":\"Bộ Lót Ly Gỗ 4 Chiếc\",\"oldPrice\":75000,\"price\":55000,\"rating\":4.7,\"stock\":90},{\"category\":\"Trang trí gỗ\",\"description\":\"Giá đỡ điện thoại bằng gỗ, góc nghiêng cố định, tiện xem phim và học online.\",\"id\":13,\"image\":\"/images/gia-do-dien-thoai-go.jpg\",\"name\":\"Giá Đỡ Điện Thoại Bằng Gỗ\",\"oldPrice\":110000,\"price\":85000,\"rating\":4.6,\"stock\":45},{\"category\":\"Đồ dùng bếp gỗ\",\"description\":\"Cây treo ly bằng gỗ có 6 nhánh, giúp ly tách ráo nước và gọn góc bếp.\",\"id\":14,\"image\":\"/images/cay-treo-ly-go.jpg\",\"name\":\"Cây Treo Ly Bằng Gỗ\",\"oldPrice\":180000,\"price\":145000,\"rating\":4.7,\"stock\":22}]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "674f04f6-7d65-4434-bde1-293582c6edf5"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
