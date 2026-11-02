@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import FeaturedProducts from "../components/home/FeaturedProducts";
 import Benefits from "../components/home/Benefits";
 import CustomOrderBanner from "../components/home/CustomOrderBanner";
+import Marketplaces from "../components/home/Marketplaces";
 
 function HomePage(){
     return(
@@ -18,6 +19,7 @@ function HomePage(){
             <FeaturedProducts />
             <Benefits />
             <CustomOrderBanner />
+            <Marketplaces />
         </>
     );
 }
