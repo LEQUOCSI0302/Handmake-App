@@ -1,6 +1,7 @@
 import "./HomePage.css";
 import {Link} from "react-router-dom";
 import FeaturedProducts from "../components/home/FeaturedProducts";
+import Benefits from "../components/home/Benefits";
 
 function HomePage(){
     return(
@@ -14,6 +15,7 @@ function HomePage(){
 
             {/* Các khu bên dưới banner */}
             <FeaturedProducts />
+            <Benefits />
         </>
     );
 }
