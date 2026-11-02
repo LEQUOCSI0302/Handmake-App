@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Cách bảo quản thớt gỗ luôn bền đẹp",
+    "excerpt": "Rửa bằng nước ấm, lau khô ngay và thoa dầu định kỳ để thớt không nứt, không mốc.",
+    "image": "/images/blog-bao-quan-thot.jpg",
+    "date": "2026-10-28"
+  },
+  {
+    "id": 2,
+    "title": "Phân biệt gỗ tần bì, gỗ mun và gỗ dừa",
+    "excerpt": "Mỗi loại gỗ có màu sắc, độ cứng và vân riêng. Chọn đúng loại sẽ giúp đồ dùng bền hơn.",
+    "image": "/images/blog-cac-loai-go.jpg",
+    "date": "2026-10-20"
+  },
+  {
+    "id": 3,
+    "title": "5 món đồ gỗ giúp căn bếp ấm cúng hơn",
+    "excerpt": "Khay, lót ly, cây treo ly… vài món nhỏ bằng gỗ đủ làm góc bếp trở nên gần gũi.",
+    "image": "/images/blog-can-bep-go.jpg",
+    "date": "2026-10-12"
+  },
+  {
+    "id": 4,
+    "title": "Gợi ý quà tặng bằng gỗ cho dịp cuối năm",
+    "excerpt": "Hộp trà khắc tên, bộ lót ly hay kệ treo tường là những món quà vừa đẹp vừa hữu ích.",
+    "image": "/images/blog-qua-tang-go.jpg",
+    "date": "2026-10-05"
+  }
+]
