@@ -1,0 +1,204 @@
+.footer,
+.footer * {
+    box-sizing: border-box;
+}
+
+.footer {
+    --cream: #e7decf;
+    --latte: #d0bca1;
+    --biscotti: #dac09b;
+    --toffee: #9f815b;
+    --cocoa: #81614a;
+
+    width: 100%;
+    padding: 48px 24px;
+    background: var(--cream);
+    color: var(--cocoa);
+    border-top: 1px solid var(--latte);
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(0, 1fr)
+        minmax(0, 220px);
+    gap: 48px;
+}
+
+.footer-container > section {
+    min-width: 0;
+}
+
+/* Tiêu đề */
+.footer-title {
+    margin: 0 0 28px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+/* Liên kết */
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer a:focus-visible {
+    outline: 2px solid var(--cocoa);
+    outline-offset: 4px;
+}
+
+/* Thông tin liên hệ */
+.footer-contact p {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* Phương thức thanh toán */
+.footer-payment-title {
+    margin: 30px 0 16px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.footer-payment {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-payment span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 12px;
+    background: var(--biscotti);
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Chính sách */
+.footer-policy ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.footer-policy li {
+    margin-bottom: 18px;
+    padding-left: 4px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.footer-policy li::marker {
+    color: var(--toffee);
+}
+
+/* Kết nối */
+.footer-connect {
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cocoa);
+    color: var(--cream);
+    border-radius: 50%;
+    font-size: 18px;
+
+    transition:
+            transform 0.2s ease,
+            background-color 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: var(--toffee);
+    text-decoration: none;
+    transform: translateY(-3px);
+}
+
+/* Logo */
+.footer-logo {
+    display: inline-block;
+    width: 180px;
+    max-width: 100%;
+}
+
+.footer-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .footer-container {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .footer-connect {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+    .footer {
+        padding: 32px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .footer-title {
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+
+    .footer-contact p,
+    .footer-policy li {
+        font-size: 14px;
+    }
+
+    .footer-contact p {
+        margin-bottom: 16px;
+    }
+
+    .footer-connect {
+        grid-column: auto;
+    }
+}
