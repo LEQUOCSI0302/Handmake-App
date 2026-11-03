@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { loginSuccess, logout } from "../store/authSlice";
 import { login } from "../services/authService";
 import "./LoginPage.css";
 
@@ -11,7 +13,11 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SPECIAL_CHAR_REGEX = /[!@#$%^&*(),.?":{}|<>_\-+=]/;
 
 export default function LoginPage() {
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
+
+    // Người dùng đang đăng nhập (lấy từ Redux), null nếu chưa đăng nhập
+    const user = useAppSelector((state) => state.auth.user);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -62,14 +68,38 @@ export default function LoginPage() {
         setDangGui(true);
         try {
             const nguoiDung = await login(email, password);
-            // Tạm thời: bước sau sẽ lưu người dùng vào Redux
-            alert("Xin chào, " + nguoiDung.name + "!");
+            dispatch(loginSuccess(nguoiDung)); // lưu vào Redux
             navigate("/"); // về trang chủ
         } catch (error) {
             setLoiChung(error instanceof Error ? error.message : "Đăng nhập thất bại.");
         } finally {
             setDangGui(false);
         }
+    }
+
+    // Đã đăng nhập rồi thì hiện lời chào và nút đăng xuất
+    if (user) {
+        return (
+            <main className="login-page">
+                <div className="login-welcome">
+                    <i className="fa-solid fa-circle-user" aria-hidden="true"></i>
+                    <h1>Xin chào, {user.name}!</h1>
+                    <p>Bạn đang đăng nhập bằng email {user.email}.</p>
+                    <div className="login-welcome-actions">
+                        <Link to="/" className="login-button">
+                            Về trang chủ
+                        </Link>
+                        <button
+                            type="button"
+                            className="login-button-outline"
+                            onClick={() => dispatch(logout())}
+                        >
+                            Đăng xuất
+                        </button>
+                    </div>
+                </div>
+            </main>
+        );
     }
 
     return (

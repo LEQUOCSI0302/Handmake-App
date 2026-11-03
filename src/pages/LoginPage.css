@@ -177,6 +177,55 @@
     font-size: 14px;
 }
 
+.login-welcome {
+    width: 100%;
+    max-width: 480px;
+    padding: 48px 32px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(129, 97, 74, 0.15);
+    text-align: center;
+}
+
+.login-welcome > i {
+    margin-bottom: 16px;
+    font-size: 64px;
+    color: var(--toffee);
+}
+
+.login-welcome h1 {
+    margin-bottom: 8px;
+    font-size: 26px;
+    color: var(--cocoa);
+}
+
+.login-welcome p {
+    margin-bottom: 28px;
+    color: #6b5a4c;
+}
+
+.login-welcome-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.login-button-outline {
+    width: 100%;
+    padding: 14px 32px;
+    border: 2px solid var(--toffee);
+    border-radius: 50px;
+    background: white;
+    color: var(--toffee);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-button-outline:hover {
+    background: var(--cream);
+}
+
 @media (max-width: 768px) {
     .login-page {
         padding: 32px 16px;
@@ -192,5 +241,9 @@
 
     .login-form {
         padding: 32px 24px;
+    }
+
+    .login-welcome-actions {
+        flex-direction: column;
     }
 }
