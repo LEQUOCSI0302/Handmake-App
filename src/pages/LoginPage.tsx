@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../services/authService";
 import "./LoginPage.css";
 
 // Mẫu kiểm tra email: có chữ, rồi @, rồi tên miền có dấu chấm (vd: abc@gmail.com)
@@ -10,11 +11,15 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SPECIAL_CHAR_REGEX = /[!@#$%^&*(),.?":{}|<>_\-+=]/;
 
 export default function LoginPage() {
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [hienMatKhau, setHienMatKhau] = useState(false);
     const [loiEmail, setLoiEmail] = useState("");
     const [loiMatKhau, setLoiMatKhau] = useState("");
+    const [loiChung, setLoiChung] = useState("");
+    const [dangGui, setDangGui] = useState(false);
 
     // Kiểm tra dữ liệu nhập. Trả về true nếu hợp lệ.
     function kiemTra(): boolean {
@@ -46,15 +51,25 @@ export default function LoginPage() {
         return hopLe;
     }
 
-    function xuLyDangNhap(e: FormEvent<HTMLFormElement>) {
+    async function xuLyDangNhap(e: FormEvent<HTMLFormElement>) {
         e.preventDefault(); // chặn trình duyệt tải lại trang khi bấm nút
+        setLoiChung("");
 
         if (!kiemTra()) {
             return;
         }
 
-        // Tạm thời: bước sau sẽ kiểm tra tài khoản với Mockoon
-        alert("Thông tin hợp lệ!");
+        setDangGui(true);
+        try {
+            const nguoiDung = await login(email, password);
+            // Tạm thời: bước sau sẽ lưu người dùng vào Redux
+            alert("Xin chào, " + nguoiDung.name + "!");
+            navigate("/"); // về trang chủ
+        } catch (error) {
+            setLoiChung(error instanceof Error ? error.message : "Đăng nhập thất bại.");
+        } finally {
+            setDangGui(false);
+        }
     }
 
     return (
@@ -74,6 +89,8 @@ export default function LoginPage() {
                 <form className="login-form" onSubmit={xuLyDangNhap} noValidate>
                     <h1>Đăng nhập</h1>
                     <p className="login-subtitle">Nhập email và mật khẩu của bạn.</p>
+
+                    {loiChung && <p className="login-error-box">{loiChung}</p>}
 
                     <label htmlFor="email">Email</label>
                     <input
@@ -116,8 +133,8 @@ export default function LoginPage() {
                         <Link to="/quen-mat-khau">Quên mật khẩu?</Link>
                     </div>
 
-                    <button type="submit" className="login-button">
-                        Đăng nhập
+                    <button type="submit" className="login-button" disabled={dangGui}>
+                        {dangGui ? "Đang đăng nhập..." : "Đăng nhập"}
                     </button>
 
                     <p className="login-register">

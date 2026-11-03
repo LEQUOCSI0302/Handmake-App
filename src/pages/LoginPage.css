@@ -97,6 +97,16 @@
     color: #b23b3b;
 }
 
+.login-error-box {
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border: 1px solid #e6b8b8;
+    border-radius: 10px;
+    background: #fbeaea;
+    font-size: 14px;
+    color: #b23b3b;
+}
+
 .password-box {
     position: relative;
 }
