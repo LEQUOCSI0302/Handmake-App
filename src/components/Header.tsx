@@ -10,7 +10,7 @@ export default function Header() {
             <div className="header-container">
                 {/* Logo */}
                 <Link to="/" className="header-logo">
-                    <img src="/logo.png" alt="Handmake" />
+                    <img src="/images/logo.png" alt="logo-Handmake" />
                 </Link>
 
                 {/* Menu */}

@@ -5,7 +5,7 @@ import Benefits from "../components/home/Benefits";
 import CustomOrderBanner from "../components/home/CustomOrderBanner";
 import Marketplaces from "../components/home/Marketplaces";
 import BlogSection from "../components/home/BlogSection";
-
+import ValueProduct from "../components/home/valueOfProduct.tsx";
 function HomePage(){
     return(
         <>
@@ -17,6 +17,7 @@ function HomePage(){
             </section>
 
             {/* Các khu bên dưới banner */}
+            <ValueProduct />
             <FeaturedProducts />
             <Benefits />
             <CustomOrderBanner />
