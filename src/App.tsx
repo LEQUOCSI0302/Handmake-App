@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage.tsx";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/gioi-thieu" element={<AboutPage />} />
+                <Route path="/tai-khoan" element={<LoginPage />} />
             </Routes>
 
             <Footer />
