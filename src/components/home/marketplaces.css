@@ -1,0 +1,38 @@
+.market-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.market-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+    padding: 18px 28px;
+    justify-content: center;
+    border: 1px solid var(--latte);
+    border-radius: 16px;
+    background: white;
+    color: var(--cocoa);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.market-item i {
+    font-size: 22px;
+    color: var(--toffee);
+}
+
+.market-item:hover {
+    background: var(--cream);
+}
+
+@media (max-width: 600px) {
+    .market-item {
+        width: 100%;
+    }
+}

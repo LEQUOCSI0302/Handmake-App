@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Anh Tuấn",
+    "email": "tuan@handmake.vn",
+    "password": "Handmake@123",
+    "phone": "0901234561",
+    "role": "customer"
+  },
+  {
+    "id": 2,
+    "name": "Đình Việt",
+    "email": "viet@handmake.vn",
+    "password": "Handmake@123",
+    "phone": "0901234562",
+    "role": "customer"
+  },
+  {
+    "id": 3,
+    "name": "Quốc Sĩ",
+    "email": "si@handmake.vn",
+    "password": "Admin@2026",
+    "phone": "0901234563",
+    "role": "admin"
+  }
+]
