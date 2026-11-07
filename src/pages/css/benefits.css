@@ -15,7 +15,7 @@
     padding: 20px;
     border: 1px solid var(--latte);
     border-radius: 16px;
-    background: white;
+    background: var(--white);
 }
 
 .benefit-icon {
@@ -39,7 +39,7 @@
 
 .benefit-item p {
     font-size: 14px;
-    color: #6b5a4c;
+    color: var(--text-light);
 }
 
 @media (max-width: 1000px) {

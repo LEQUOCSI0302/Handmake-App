@@ -6,7 +6,6 @@ import { addToCart } from "../store/cartSlice";
 import { formatPrice } from "../utils/formatPrice";
 import "./css/productCard.css";
 
-// Ảnh thay thế khi sản phẩm chưa có ảnh hoặc ảnh bị lỗi
 const NO_IMAGE = "https://placehold.co/400x400/e7decf/81614a?text=Handmake";
 
 type ProductCardProps = {
@@ -16,10 +15,8 @@ type ProductCardProps = {
 export default function ProductCard({ product }: ProductCardProps) {
     const dispatch = useAppDispatch();
 
-    // true trong 1,5 giây sau khi bấm thêm vào giỏ, để đổi icon thành dấu tích
     const [daThem, setDaThem] = useState(false);
 
-    // Tính phần trăm giảm giá nếu sản phẩm có giá cũ
     let giamGia = 0;
     if (product.oldPrice) {
         giamGia = Math.round((1 - product.price / product.oldPrice) * 100);
@@ -38,7 +35,6 @@ export default function ProductCard({ product }: ProductCardProps) {
                     src={product.image}
                     alt={product.name}
                     onError={(e) => {
-                        // Ảnh lỗi thì đổi sang ảnh thay thế (chỉ đổi 1 lần)
                         if (e.currentTarget.src !== NO_IMAGE) {
                             e.currentTarget.src = NO_IMAGE;
                         }

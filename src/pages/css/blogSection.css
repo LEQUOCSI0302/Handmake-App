@@ -10,12 +10,12 @@
     overflow: hidden;
     border: 1px solid var(--latte);
     border-radius: 16px;
-    background: white;
+    background: var(--white);
     transition: box-shadow 0.2s ease;
 }
 
 .blog-card:hover {
-    box-shadow: 0 8px 20px rgba(129, 97, 74, 0.15);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
 .blog-card-image {
@@ -39,8 +39,8 @@
     width: 52px;
     padding: 6px 0;
     border-radius: 12px;
-    background: white;
-    color: #6b5a4c;
+    background: var(--white);
+    color: var(--text-light);
     font-size: 12px;
     line-height: 1.2;
     text-align: center;
@@ -78,7 +78,7 @@
     margin-bottom: 14px;
     font-size: 14px;
     line-height: 1.6;
-    color: #6b5a4c;
+    color: var(--text-light);
 }
 
 .blog-card-more {

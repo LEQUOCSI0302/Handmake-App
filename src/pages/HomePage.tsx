@@ -16,7 +16,6 @@ function HomePage(){
                 </Link>
             </section>
 
-            {/* Các khu bên dưới banner */}
             <ValueProduct />
             <FeaturedProducts />
             <Benefits />

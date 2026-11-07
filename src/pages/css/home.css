@@ -1,25 +1,19 @@
-/* CSS dùng chung cho các khu ở trang chủ */
-
-/* Mỗi khu (section) cách trên dưới 60px, font và màu chữ giống Header */
 .home-section {
     padding: 60px 0;
-    color: #3b2f27;
+    color: var(--text-dark);
     background: var(--white);
 }
 
-/* Khu có nền màu kem để xen kẽ với khu nền trắng */
 .home-section-cream {
     background: var(--cream);
 }
 
-/* Khung nội dung: rộng tối đa 1440px, cách lề 24px (giống Header) */
 .home-container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* Tiêu đề khu, căn giữa */
 .section-title {
     margin-bottom: 32px;
     text-align: center;
@@ -30,7 +24,6 @@
     color: var(--cocoa);
 }
 
-/* Gạch ngang nhỏ dưới tiêu đề */
 .section-title h2::after {
     content: "";
     display: block;
@@ -42,17 +35,16 @@
 
 .section-title p {
     margin-top: 12px;
-    color: #6b5a4c;
+    color: var(--text-light);
 }
 
-/* Nút nâu bo tròn (giống nút "MUA NGAY" ở banner) */
 .home-button {
     display: inline-block;
     padding: 12px 32px;
     border: none;
     border-radius: 50px;
     background: var(--toffee);
-    color: white;
+    color: var(--white);
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
@@ -62,15 +54,14 @@
     background: var(--cocoa);
 }
 
-/* Dòng thông báo khi đang tải hoặc bị lỗi */
 .home-message {
     padding: 24px;
     text-align: center;
-    color: #6b5a4c;
+    color: var(--text-light);
 }
 
 .home-message-error {
-    color: #b23b3b;
+    color: var(--red);
 }
 
 @media (max-width: 768px) {

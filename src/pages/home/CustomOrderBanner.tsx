@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "../css/home.css";
 import "../css/customOrderBanner.css";
 
-// 3 bước đặt làm đồ gỗ theo yêu cầu
 const steps = [
     {
         icon: "fa-solid fa-pen-ruler",
@@ -25,7 +24,6 @@ export default function CustomOrderBanner() {
     return (
         <section className="home-section custom-order">
             <div className="home-container custom-order-inner">
-                {/* Bên trái: lời giới thiệu và nút */}
                 <div className="custom-order-text">
                     <p className="custom-order-label">Làm theo yêu cầu</p>
                     <h2>Đồ gỗ khắc tên, món quà dành riêng cho bạn</h2>
@@ -38,7 +36,6 @@ export default function CustomOrderBanner() {
                     </Link>
                 </div>
 
-                {/* Bên phải: 3 bước */}
                 <div className="custom-order-steps">
                     {steps.map((step, index) => (
                         <div className="custom-order-step" key={step.title}>

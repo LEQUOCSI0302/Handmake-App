@@ -1,8 +1,6 @@
 import { apiGet } from "./api";
 import type { User, UserAccount } from "../types/user.ts";
 
-// Đăng nhập: lấy danh sách tài khoản từ Mockoon rồi tìm tài khoản khớp email và mật khẩu.
-// (Fake API nên kiểm tra ở frontend; server thật sẽ tự kiểm tra và không gửi mật khẩu về.)
 export async function login(email: string, password: string): Promise<User> {
     let accounts: UserAccount[];
     try {
@@ -21,7 +19,6 @@ export async function login(email: string, password: string): Promise<User> {
         throw new Error("Email hoặc mật khẩu không đúng.");
     }
 
-    // Chỉ trả về thông tin cần dùng, bỏ mật khẩu đi
     return {
         id: found.id,
         name: found.name,
