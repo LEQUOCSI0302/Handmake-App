@@ -1,8 +1,6 @@
 import "../css/home.css";
 import "../css/benefits.css";
 
-// Các lợi ích khi mua hàng.
-// Mỗi lợi ích có: icon (class của Font Awesome), tiêu đề và mô tả ngắn.
 const benefits = [
     { icon: "fa-solid fa-truck-fast", title: "Miễn phí vận chuyển", content: "Cho đơn hàng từ 300.000₫" },
     { icon: "fa-solid fa-rotate-left", title: "Đổi trả trong 7 ngày", content: "Nếu sản phẩm bị lỗi, nứt vỡ" },

@@ -5,7 +5,6 @@ type SectionTitleProps = {
     subtitle?: string;
 };
 
-// Tiêu đề dùng chung cho các khu ở trang chủ
 export default function SectionTitle({ title, subtitle }: SectionTitleProps) {
     return (
         <div className="section-title">

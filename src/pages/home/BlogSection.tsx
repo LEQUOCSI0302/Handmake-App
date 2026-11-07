@@ -6,7 +6,6 @@ import SectionTitle from "./SectionTitle.tsx";
 import "../css/home.css";
 import "../css/blogSection.css";
 
-// Ảnh thay thế khi bài viết chưa có ảnh hoặc ảnh bị lỗi
 const NO_IMAGE = "https://placehold.co/600x400/e7decf/81614a?text=Handmake";
 
 export default function BlogSection() {
@@ -16,7 +15,7 @@ export default function BlogSection() {
 
     useEffect(() => {
         getPosts()
-            .then((data) => setPosts(data.slice(0, 4))) // chỉ lấy 4 bài
+            .then((data) => setPosts(data.slice(0, 4)))
             .catch(() => setLoi("Không tải được bài viết. Bạn kiểm tra Mockoon đã chạy chưa nhé."))
             .finally(() => setDangTai(false));
     }, []);
@@ -34,7 +33,6 @@ export default function BlogSection() {
 
                 <div className="blog-list">
                     {posts.map((post) => {
-                        // Tách ngày và tháng từ chuỗi "2026-10-28"
                         const ngay = new Date(post.date);
                         const day = String(ngay.getDate()).padStart(2, "0");
                         const month = ngay.getMonth() + 1;

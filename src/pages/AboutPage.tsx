@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import './css/AboutPage.css';
 
-
 const factors = [
     {
         icon: 'fa-solid fa-tree',
@@ -26,7 +25,6 @@ const factors = [
 function AboutPage() {
     return (
         <main className="about-page">
-            {/* Phần 1: giới thiệu chung (chữ bên trái, ảnh bên phải) */}
             <section className="about-intro">
                 <div className="about-container">
                     <div>
@@ -55,10 +53,6 @@ function AboutPage() {
                     />
                 </div>
             </section>
-
-            {
-
-            }
             <section className="about-factors">
                 <div className="about-container">
                     <h2 className="about-subtitle">Các yếu tố tạo nên Handmake</h2>

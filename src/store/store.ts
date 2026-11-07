@@ -9,7 +9,6 @@ store.subscribe(() =>{
     try{
         localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(store.getState().cart.items));
 
-        // Lưu người dùng đang đăng nhập, đăng xuất thì xóa đi
         const user = store.getState().auth.user;
         if (user) {
             localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));

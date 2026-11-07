@@ -6,6 +6,17 @@
     --toffee: #9f815b;
     --cocoa: #81614a;
     --white: #ffffff;
+    --text-dark: #3b2f27;
+    --text-light: #6b5a4c;
+    --text-gray: #8a7a6e;
+    --star: #e0a526;
+    --red: #b23b3b;
+    --red-light: #fbeaea;
+    --red-border: #e6b8b8;
+    --shadow: rgba(129, 97, 74, 0.15);
+    --focus: rgba(159, 129, 91, 0.2);
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(231, 222, 207, 0.35);
 }
 
 

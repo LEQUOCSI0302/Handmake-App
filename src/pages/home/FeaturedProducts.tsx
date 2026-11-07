@@ -7,7 +7,6 @@ import SectionTitle from "./SectionTitle.tsx";
 import "../css/home.css";
 import "../css/featuredProducts.css";
 
-// Số sản phẩm hiện ra ở trang chủ
 const SO_SAN_PHAM = 8;
 
 export default function FeaturedProducts() {
@@ -16,7 +15,6 @@ export default function FeaturedProducts() {
     const [loi, setLoi] = useState("");
     const [danhMuc, setDanhMuc] = useState("Tất cả");
 
-    // Gọi API 1 lần khi khu này hiện ra
     useEffect(() => {
         getProducts()
             .then((data) => setProducts(data))
@@ -24,10 +22,8 @@ export default function FeaturedProducts() {
             .finally(() => setDangTai(false));
     }, []);
 
-    // Danh sách danh mục lấy từ dữ liệu, bỏ trùng bằng Set
     const cacDanhMuc = ["Tất cả", ...new Set(products.map((p) => p.category))];
 
-    // Lọc theo danh mục đang chọn, xếp theo đánh giá cao nhất, lấy 8 sản phẩm
     const sanPhamHienThi = products
         .filter((p) => danhMuc === "Tất cả" || p.category === danhMuc)
         .sort((a, b) => b.rating - a.rating)
@@ -46,7 +42,6 @@ export default function FeaturedProducts() {
 
                 {!dangTai && !loi && (
                     <>
-                        {/* Các nút lọc theo danh mục */}
                         <div className="category-tabs">
                             {cacDanhMuc.map((ten) => (
                                 <button
