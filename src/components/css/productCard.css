@@ -5,7 +5,7 @@
     overflow: hidden;
     border: 1px solid var(--latte);
     border-radius: 16px;
-    background: white;
+    background: var(--white);
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -35,7 +35,7 @@
     padding: 4px 10px;
     border-radius: 50px;
     background: var(--cocoa);
-    color: white;
+    color: var(--white);
     font-size: 13px;
     font-weight: 700;
 }
@@ -106,7 +106,7 @@
     border: none;
     border-radius: 50%;
     background: var(--toffee);
-    color: white;
+    color: var(--white);
     font-size: 17px;
     cursor: pointer;
 }

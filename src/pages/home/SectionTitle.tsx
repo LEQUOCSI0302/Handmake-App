@@ -1,4 +1,4 @@
-import "./home.css";
+import "../css/home.css";
 
 type SectionTitleProps = {
     title: string;

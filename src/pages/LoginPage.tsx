@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { loginSuccess, logout } from "../store/authSlice";
 import { login } from "../services/authService";
-import "./LoginPage.css";
+import "./css/LoginPage.css";
 
 // Mẫu kiểm tra email: có chữ, rồi @, rồi tên miền có dấu chấm (vd: abc@gmail.com)
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

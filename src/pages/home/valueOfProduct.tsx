@@ -1,4 +1,4 @@
-import "./valueOfProduct.css";
+import "../css/valueOfProduct.css";
 
 export default function ValueProduct(){
     return (

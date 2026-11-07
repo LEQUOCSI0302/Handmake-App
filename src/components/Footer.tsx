@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./footer.css";
+import "./css/footer.css";
 
 export default function Footer() {
     return (
@@ -33,21 +33,13 @@ export default function Footer() {
                         </li>
 
                         <li>
-                            <Link to="/chinh-sach-doi-tra">
-                                Chính sách đổi trả hàng
+                            <Link to="/chinh-sach">
+                                Chính sách
                             </Link>
                         </li>
-
-                        <li>
-                            <Link to="/chinh-sach-bao-mat">
-                                Chính sách bảo mật
-                            </Link>
-                        </li>
-
                         <li>
                             <Link to="/lien-he">Góp ý, Khiếu nại</Link>
                         </li>
-
                         <li>
                             <Link to="/van-chuyen-thanh-toan">
                                 Vận chuyển và thanh toán

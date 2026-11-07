@@ -5,10 +5,22 @@
     --biscotti: #dac09b;
     --toffee: #9f815b;
     --cocoa: #81614a;
+    --white: #ffffff;
 }
+
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
 }

@@ -1,5 +1,5 @@
-import "./home.css";
-import "./benefits.css";
+import "../css/home.css";
+import "../css/benefits.css";
 
 // Các lợi ích khi mua hàng.
 // Mỗi lợi ích có: icon (class của Font Awesome), tiêu đề và mô tả ngắn.

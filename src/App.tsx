@@ -6,7 +6,8 @@ import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage.tsx";
 import LoginPage from "./pages/LoginPage";
-import ContactPage from "./components/contact/ContactPage.tsx";
+import PolicyPage from "./pages/PolicyPage";
+import ContactPage from "./pages/contact/ContactPage.tsx";
 
 function App() {
     return (
@@ -18,6 +19,8 @@ function App() {
                 <Route path="/gioi-thieu" element={<AboutPage />} />
                 <Route path="/tai-khoan" element={<LoginPage />} />
                 <Route path="/lien-he" element={<ContactPage />} />
+                <Route path="/chinh-sach" element={<PolicyPage />} />
+                <Route path="/chinh-sach/:policyId" element={<PolicyPage/>} />
             </Routes>
 
             <Footer />

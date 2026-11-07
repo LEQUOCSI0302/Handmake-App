@@ -4,7 +4,7 @@ import type { Product } from "../types/product";
 import { useAppDispatch } from "../store/hooks";
 import { addToCart } from "../store/cartSlice";
 import { formatPrice } from "../utils/formatPrice";
-import "./productCard.css";
+import "./css/productCard.css";
 
 // Ảnh thay thế khi sản phẩm chưa có ảnh hoặc ảnh bị lỗi
 const NO_IMAGE = "https://placehold.co/400x400/e7decf/81614a?text=Handmake";

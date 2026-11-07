@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./home.css";
-import "./customOrderBanner.css";
+import "../css/home.css";
+import "../css/customOrderBanner.css";
 
 // 3 bước đặt làm đồ gỗ theo yêu cầu
 const steps = [

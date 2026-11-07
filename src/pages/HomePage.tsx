@@ -1,11 +1,11 @@
-import "./HomePage.css";
+import "./css/HomePage.css";
 import {Link} from "react-router-dom";
-import FeaturedProducts from "../components/home/FeaturedProducts";
-import Benefits from "../components/home/Benefits";
-import CustomOrderBanner from "../components/home/CustomOrderBanner";
-import Marketplaces from "../components/home/Marketplaces";
-import BlogSection from "../components/home/BlogSection";
-import ValueProduct from "../components/home/valueOfProduct.tsx";
+import FeaturedProducts from "./home/FeaturedProducts";
+import Benefits from "./home/Benefits";
+import CustomOrderBanner from "./home/CustomOrderBanner";
+import Marketplaces from "./home/Marketplaces";
+import BlogSection from "./home/BlogSection";
+import ValueProduct from "./home/valueOfProduct.tsx";
 function HomePage(){
     return(
         <>

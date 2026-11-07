@@ -14,7 +14,7 @@
     justify-content: center;
     border: 1px solid var(--latte);
     border-radius: 16px;
-    background: white;
+    background: var(--white);
     color: var(--cocoa);
     font-size: 18px;
     font-weight: 700;

@@ -1,4 +1,4 @@
-import "./header.css";
+import "./css/header.css";
 import { Link, NavLink } from "react-router-dom";
 import useScroll from "./useScroll";
 

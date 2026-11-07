@@ -14,8 +14,6 @@
     width: 100%;
     background: var(--cream);
     border-bottom: 1px solid var(--latte);
-    font-family: Arial, sans-serif;
-
     transition:
             background-color 0.3s ease,
             box-shadow 0.3s ease;
