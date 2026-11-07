@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import type { Product } from "../../types/product";
-import { getProducts } from "../../services/productService";
-import ProductCard from "../ProductCard";
-import SectionTitle from "./SectionTitle";
-import "./home.css";
-import "./featuredProducts.css";
+import type { Product } from "../../types/product.ts";
+import { getProducts } from "../../services/productService.ts";
+import ProductCard from "../../components/ProductCard.tsx";
+import SectionTitle from "./SectionTitle.tsx";
+import "../css/home.css";
+import "../css/featuredProducts.css";
 
 // Số sản phẩm hiện ra ở trang chủ
 const SO_SAN_PHAM = 8;

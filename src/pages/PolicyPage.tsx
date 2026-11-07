@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./PolicyPage.css";
+import "./css/PolicyPage.css";
 
 export default function PolicyPage() {
     return (

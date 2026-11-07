@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import type { Post } from "../../types/post";
-import { getPosts } from "../../services/postService";
-import SectionTitle from "./SectionTitle";
-import "./home.css";
-import "./blogSection.css";
+import type { Post } from "../../types/post.ts";
+import { getPosts } from "../../services/postService.ts";
+import SectionTitle from "./SectionTitle.tsx";
+import "../css/home.css";
+import "../css/blogSection.css";
 
 // Ảnh thay thế khi bài viết chưa có ảnh hoặc ảnh bị lỗi
 const NO_IMAGE = "https://placehold.co/600x400/e7decf/81614a?text=Handmake";

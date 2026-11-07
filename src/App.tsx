@@ -7,7 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage.tsx";
 import LoginPage from "./pages/LoginPage";
 import PolicyPage from "./pages/PolicyPage";
-import ContactPage from "./components/contact/ContactPage.tsx";
+import ContactPage from "./pages/contact/ContactPage.tsx";
 
 function App() {
     return (

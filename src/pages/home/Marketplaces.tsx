@@ -1,6 +1,6 @@
-import SectionTitle from "./SectionTitle";
-import "./home.css";
-import "./marketplaces.css";
+import SectionTitle from "./SectionTitle.tsx";
+import "../css/home.css";
+import "../css/marketplaces.css";
 
 // Các sàn thương mại điện tử cửa hàng đang bán
 const markets = [
