@@ -1,7 +1,6 @@
 .about-page {
-    font-family: Arial, sans-serif;
     color: #3b2f27;
-    background: white;
+    background: var(--white);
 }
 
 .about-container {

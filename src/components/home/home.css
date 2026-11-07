@@ -3,9 +3,8 @@
 /* Mỗi khu (section) cách trên dưới 60px, font và màu chữ giống Header */
 .home-section {
     padding: 60px 0;
-    font-family: Arial, sans-serif;
     color: #3b2f27;
-    background: white;
+    background: var(--white);
 }
 
 /* Khu có nền màu kem để xen kẽ với khu nền trắng */

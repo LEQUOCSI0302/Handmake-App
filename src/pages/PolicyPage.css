@@ -1,0 +1,110 @@
+
+.policy-page {
+    background: var(--white);
+    color: var(--cocoa);
+    padding-bottom: 50px;
+}
+
+.policy-page * {
+    box-sizing: border-box;
+}
+.policy-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 28px 20px;
+
+    background: var(--latte);
+    border-bottom: 1px solid var(--toffee);
+}
+
+.policy-top a {
+    color: #493629;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    text-underline-offset: 4px;
+}
+
+.policy-top a:hover {
+    color: #302319;
+}
+.policy-community {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 0;
+}
+
+.policy-community h1 {
+    margin: 0 0 30px;
+    color: var(--cocoa);
+    text-align: center;
+    font-size: 28px;
+}
+.policy-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.policy-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 210px;
+    padding: 30px 24px;
+
+    background: var(--biscotti);
+    border: 1px solid var(--toffee);
+    border-radius: 8px;
+
+    color: #493629;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.policy-card h2 {
+    margin: 0 0 14px;
+    font-size: 23px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.policy-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.policy-card:hover {
+    background: var(--latte);
+    border-color: var(--cocoa);
+}
+
+.policy-page a:focus-visible {
+    outline: 3px solid var(--cocoa);
+    outline-offset: 4px;
+}
+@media (max-width: 768px) {
+    .policy-top {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .policy-top a {
+        font-size: 18px;
+    }
+    .policy-community h1 {
+        font-size: 24px;
+    }
+    .policy-list {
+        grid-template-columns: 1fr;
+    }
+    .policy-card {
+        min-height: 160px;
+    }
+}
