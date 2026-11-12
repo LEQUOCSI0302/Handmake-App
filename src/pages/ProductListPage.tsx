@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import type { Product } from "../types/product";
 import { getProducts } from "../services/productService";
 import ProductCard from "../components/ProductCard";
@@ -11,7 +11,9 @@ export default function ProductListPage() {
     const [products, setProducts] = useState<Product[]>([]);
     const [dangTai, setDangTai] = useState(true);
     const [loi, setLoi] = useState("");
-    const [danhMuc, setDanhMuc] = useState(TAT_CA);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const danhMuc = searchParams.get("danh-muc") || TAT_CA;
 
     useEffect(() => {
         getProducts()
@@ -25,6 +27,21 @@ export default function ProductListPage() {
     const sanPhamHienThi = products.filter(
         (p) => danhMuc === TAT_CA || p.category === danhMuc
     );
+
+    function chonDanhMuc(ten: string) {
+        if (ten === TAT_CA) {
+            setSearchParams({});
+        } else {
+            setSearchParams({ "danh-muc": ten });
+        }
+    }
+
+    function demSanPham(ten: string): number {
+        if (ten === TAT_CA) {
+            return products.length;
+        }
+        return products.filter((p) => p.category === ten).length;
+    }
 
     return (
         <main className="product-page">
@@ -53,9 +70,10 @@ export default function ProductListPage() {
                                                     ? "product-sidebar-item active"
                                                     : "product-sidebar-item"
                                             }
-                                            onClick={() => setDanhMuc(ten)}
+                                            onClick={() => chonDanhMuc(ten)}
                                         >
                                             {ten}
+                                            <span>{demSanPham(ten)}</span>
                                         </button>
                                     </li>
                                 ))}
