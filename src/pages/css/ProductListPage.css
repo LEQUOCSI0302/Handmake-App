@@ -36,6 +36,71 @@
     padding: 40px 24px 60px;
 }
 
+.product-page-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.product-sidebar {
+    padding: 20px;
+    border: 1px solid var(--latte);
+    border-radius: 16px;
+    background: var(--white);
+}
+
+.product-sidebar h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: var(--cocoa);
+}
+
+.product-sidebar ul {
+    list-style: none;
+}
+
+.product-sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.product-sidebar-item:hover {
+    background: var(--cream);
+}
+
+.product-sidebar-item.active {
+    background: var(--cocoa);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.product-sidebar-item span {
+    min-width: 28px;
+    padding: 2px 8px;
+    border-radius: 50px;
+    background: var(--cream);
+    color: var(--cocoa);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.product-sidebar-item.active span {
+    background: var(--white);
+}
+
 .product-page-count {
     margin-bottom: 24px;
     font-size: 14px;
@@ -44,7 +109,7 @@
 
 .product-page-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
@@ -60,7 +125,7 @@
 
 @media (max-width: 1100px) {
     .product-page-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -75,6 +140,35 @@
 
     .product-page-container {
         padding: 24px 16px 40px;
+    }
+
+    .product-page-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .product-sidebar {
+        padding: 0;
+        border: none;
+    }
+
+    .product-sidebar h3 {
+        display: none;
+    }
+
+    .product-sidebar ul {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .product-sidebar-item {
+        width: auto;
+        margin-bottom: 0;
+        border: 1px solid var(--latte);
+        border-radius: 50px;
+        white-space: nowrap;
     }
 
     .product-page-grid {
