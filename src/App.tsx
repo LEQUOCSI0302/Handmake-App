@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import ProductListPage from "./pages/ProductListPage";
 import PolicyPage from "./pages/PolicyPage";
 import ContactPage from "./pages/contact/ContactPage.tsx";
+import ProductDetailPage from "./pages/product/ProductDetailPage.tsx";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/gioi-thieu" element={<AboutPage />} />
                 <Route path="/tai-khoan" element={<LoginPage />} />
                 <Route path="/san-pham" element={<ProductListPage />} />
+                <Route path="/san-pham/:id" element={<ProductDetailPage />} />
                 <Route path="/lien-he" element={<ContactPage />} />
                 <Route path="/chinh-sach" element={<PolicyPage />} />
                 <Route path="/chinh-sach/:policyId" element={<PolicyPage/>} />
