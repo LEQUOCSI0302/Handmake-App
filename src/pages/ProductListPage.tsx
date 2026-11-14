@@ -12,6 +12,7 @@ export default function ProductListPage() {
     const [dangTai, setDangTai] = useState(true);
     const [loi, setLoi] = useState("");
     const [searchParams, setSearchParams] = useSearchParams();
+    const [sapXep, setSapXep] = useState("mac-dinh");
 
     const danhMuc = searchParams.get("danh-muc") || TAT_CA;
 
@@ -27,6 +28,12 @@ export default function ProductListPage() {
     const sanPhamHienThi = products.filter(
         (p) => danhMuc === TAT_CA || p.category === danhMuc
     );
+
+    if (sapXep === "gia-tang") {
+        sanPhamHienThi.sort((a, b) => a.price - b.price);
+    } else if (sapXep === "gia-giam") {
+        sanPhamHienThi.sort((a, b) => b.price - a.price);
+    }
 
     function chonDanhMuc(ten: string) {
         if (ten === TAT_CA) {
@@ -81,9 +88,23 @@ export default function ProductListPage() {
                         </aside>
 
                         <div className="product-main">
-                            <p className="product-page-count">
-                                Hiển thị {sanPhamHienThi.length} sản phẩm
-                            </p>
+                            <div className="product-toolbar">
+                                <p className="product-page-count">
+                                    Hiển thị {sanPhamHienThi.length} sản phẩm
+                                </p>
+
+                                <label className="product-sort">
+                                    Sắp xếp:
+                                    <select
+                                        value={sapXep}
+                                        onChange={(e) => setSapXep(e.target.value)}
+                                    >
+                                        <option value="mac-dinh">Mặc định</option>
+                                        <option value="gia-tang">Giá: thấp đến cao</option>
+                                        <option value="gia-giam">Giá: cao đến thấp</option>
+                                    </select>
+                                </label>
+                            </div>
 
                             {sanPhamHienThi.length === 0 ? (
                                 <p className="product-page-message">
