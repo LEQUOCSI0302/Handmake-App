@@ -1,30 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Cách bảo quản thớt gỗ luôn bền đẹp",
-    "excerpt": "Rửa bằng nước ấm, lau khô ngay và thoa dầu định kỳ để thớt không nứt, không mốc.",
-    "image": "/images/blog-bao-quan-thot.jpg",
+    "title": "Cách bảo quản đồ gỗ luôn bền đẹp",
+    "excerpt": "Một vài cách vệ sinh và bảo quản giúp đồ gỗ luôn sạch đẹp trong quá trình sử dụng.",
+    "image": "/images/ImagesProducts/2.jpg",
     "date": "2026-10-28"
   },
   {
     "id": 2,
-    "title": "Phân biệt gỗ tần bì, gỗ mun và gỗ dừa",
-    "excerpt": "Mỗi loại gỗ có màu sắc, độ cứng và vân riêng. Chọn đúng loại sẽ giúp đồ dùng bền hơn.",
-    "image": "/images/blog-cac-loai-go.jpg",
+    "title": "Chọn đồ gỗ phù hợp với không gian sống",
+    "excerpt": "Gợi ý lựa chọn màu sắc, kích thước và kiểu dáng đồ gỗ cho từng góc nhỏ trong nhà.",
+    "image": "/images/ImagesProducts/3.jpg",
     "date": "2026-10-20"
   },
   {
     "id": 3,
-    "title": "5 món đồ gỗ giúp căn bếp ấm cúng hơn",
-    "excerpt": "Khay, lót ly, cây treo ly… vài món nhỏ bằng gỗ đủ làm góc bếp trở nên gần gũi.",
-    "image": "/images/blog-can-bep-go.jpg",
+    "title": "Gợi ý quà tặng handmade ý nghĩa",
+    "excerpt": "Những món quà nhỏ mang nét mộc mạc, gần gũi dành cho bạn bè và người thân.",
+    "image": "/images/ImagesProducts/1.jpg",
     "date": "2026-10-12"
-  },
-  {
-    "id": 4,
-    "title": "Gợi ý quà tặng bằng gỗ cho dịp cuối năm",
-    "excerpt": "Hộp trà khắc tên, bộ lót ly hay kệ treo tường là những món quà vừa đẹp vừa hữu ích.",
-    "image": "/images/blog-qua-tang-go.jpg",
-    "date": "2026-10-05"
   }
 ]
