@@ -14,9 +14,7 @@ type ProductCardProps = {
 
 export default function ProductCard({ product }: ProductCardProps) {
     const dispatch = useAppDispatch();
-
     const [daThem, setDaThem] = useState(false);
-
     let giamGia = 0;
     if (product.oldPrice) {
         giamGia = Math.round((1 - product.price / product.oldPrice) * 100);
@@ -35,6 +33,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     src={product.image}
                     alt={product.name}
                     onError={(e) => {
+
                         if (e.currentTarget.src !== NO_IMAGE) {
                             e.currentTarget.src = NO_IMAGE;
                         }
