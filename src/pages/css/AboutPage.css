@@ -1,5 +1,5 @@
 .about-page {
-    color: #3b2f27;
+    color: var(--text-dark);
     background: var(--white);
 }
 
@@ -36,7 +36,7 @@
     padding: 12px 32px;
     border-radius: 50px;
     background: var(--toffee);
-    color: white;
+    color: var(--white);
     font-weight: 700;
     text-decoration: none;
 }
@@ -75,7 +75,7 @@
     padding: 28px 24px;
     border: 1px solid var(--latte);
     border-radius: 16px;
-    background: white;
+    background: var(--white);
     text-align: center;
 }
 

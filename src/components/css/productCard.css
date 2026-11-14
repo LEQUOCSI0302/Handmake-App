@@ -1,4 +1,3 @@
-/* Thẻ sản phẩm */
 .product-card {
     display: flex;
     flex-direction: column;
@@ -11,7 +10,7 @@
 
 .product-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(129, 97, 74, 0.15);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
 .product-card-image {
@@ -74,10 +73,9 @@
 }
 
 .product-card-rating i {
-    color: #e0a526;
+    color: var(--star);
 }
 
-/* Hàng cuối: giá bên trái, nút giỏ hàng bên phải */
 .product-card-bottom {
     display: flex;
     align-items: center;
@@ -95,7 +93,7 @@
 
 .product-card-old-price {
     font-size: 13px;
-    color: #8a7a6e;
+    color: var(--text-gray);
     text-decoration: line-through;
 }
 

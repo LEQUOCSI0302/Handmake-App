@@ -6,17 +6,14 @@ import { loginSuccess, logout } from "../store/authSlice";
 import { login } from "../services/authService";
 import "./css/LoginPage.css";
 
-// Mẫu kiểm tra email: có chữ, rồi @, rồi tên miền có dấu chấm (vd: abc@gmail.com)
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Mẫu kiểm tra mật khẩu có ít nhất 1 ký tự đặc biệt (vd: ! @ # $ % ...)
 const SPECIAL_CHAR_REGEX = /[!@#$%^&*(),.?":{}|<>_\-+=]/;
 
 export default function LoginPage() {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    // Người dùng đang đăng nhập (lấy từ Redux), null nếu chưa đăng nhập
     const user = useAppSelector((state) => state.auth.user);
 
     const [email, setEmail] = useState("");
@@ -27,7 +24,6 @@ export default function LoginPage() {
     const [loiChung, setLoiChung] = useState("");
     const [dangGui, setDangGui] = useState(false);
 
-    // Kiểm tra dữ liệu nhập. Trả về true nếu hợp lệ.
     function kiemTra(): boolean {
         let hopLe = true;
 
@@ -58,7 +54,7 @@ export default function LoginPage() {
     }
 
     async function xuLyDangNhap(e: FormEvent<HTMLFormElement>) {
-        e.preventDefault(); // chặn trình duyệt tải lại trang khi bấm nút
+        e.preventDefault();
         setLoiChung("");
 
         if (!kiemTra()) {
@@ -68,8 +64,8 @@ export default function LoginPage() {
         setDangGui(true);
         try {
             const nguoiDung = await login(email, password);
-            dispatch(loginSuccess(nguoiDung)); // lưu vào Redux
-            navigate("/"); // về trang chủ
+            dispatch(loginSuccess(nguoiDung));
+            navigate("/");
         } catch (error) {
             setLoiChung(error instanceof Error ? error.message : "Đăng nhập thất bại.");
         } finally {
@@ -77,7 +73,6 @@ export default function LoginPage() {
         }
     }
 
-    // Đã đăng nhập rồi thì hiện lời chào và nút đăng xuất
     if (user) {
         return (
             <main className="login-page">
@@ -105,7 +100,6 @@ export default function LoginPage() {
     return (
         <main className="login-page">
             <div className="login-card">
-                {/* Bên trái: lời chào (ẩn trên điện thoại) */}
                 <div className="login-side">
                     <i className="fa-solid fa-tree login-side-icon" aria-hidden="true"></i>
                     <h2>Chào mừng bạn trở lại!</h2>
@@ -115,7 +109,6 @@ export default function LoginPage() {
                     </p>
                 </div>
 
-                {/* Bên phải: form đăng nhập */}
                 <form className="login-form" onSubmit={xuLyDangNhap} noValidate>
                     <h1>Đăng nhập</h1>
                     <p className="login-subtitle">Nhập email và mật khẩu của bạn.</p>

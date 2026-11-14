@@ -26,7 +26,6 @@
     color: var(--white);
 }
 
-
 .custom-order-text p {
     line-height: 1.7;
 }
@@ -46,7 +45,6 @@
     background: var(--cream);
 }
 
-/* 3 bước nằm cùng một hàng */
 .custom-order-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -56,9 +54,9 @@
 .custom-order-step {
     position: relative;
     padding: 24px 20px;
-    border: 1px solid rgba(231, 222, 207, 0.35);
+    border: 1px solid var(--glass-border);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--glass);
 }
 
 .custom-order-number {
@@ -85,7 +83,7 @@
 .custom-order-step h3 {
     margin-bottom: 8px;
     font-size: 17px;
-    color: white;
+    color: var(--white);
 }
 
 .custom-order-step p {
