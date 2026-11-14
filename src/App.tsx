@@ -8,7 +8,7 @@ import HomePage from "./pages/HomePage.tsx";
 import LoginPage from "./pages/LoginPage";
 import PolicyPage from "./pages/PolicyPage";
 import ContactPage from "./pages/contact/ContactPage.tsx";
-import BlogPage from "./pages/BlogPage";
+import BlogPage from "./pages/Blog/BlogPage.tsx";
 
 function App() {
     return (

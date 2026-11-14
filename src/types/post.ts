@@ -1,7 +1,9 @@
 export interface Post {
     id: number;
     title: string;
-    excerpt: string; // đoạn tóm tắt ngắn
+    excerpt: string;
     image: string;
-    date: string; // dạng "2026-10-28"
+    date: string;
+    author: string;
+    content: string;
 }

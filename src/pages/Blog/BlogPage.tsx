@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getPosts } from "../services/postService";
-import type { Post } from "../types/post";
-import "./css/BlogPage.css";
+import { Link } from "react-router-dom";
+import { getPosts } from "../../services/postService.ts";
+import type { Post } from "../../types/post.ts";
+import "../css/BlogPage.css";
 
 export default function BlogPage() {
     const [baiViet, setBaiViet] = useState<Post[]>([]);
@@ -70,11 +71,13 @@ export default function BlogPage() {
                     {baiViet.map((bai) => (
                         <article className="blog-item" key={bai.id}>
                             <div className="blog-item-image">
-                                <img
-                                    src={bai.image}
-                                    alt={bai.title}
-                                    loading="lazy"
-                                />
+                                <Link to={`/blog/${bai.id}`}>
+                                    <img
+                                        src={bai.image}
+                                        alt={bai.title}
+                                        loading="lazy"
+                                    />
+                                </Link>
                             </div>
 
                             <div className="blog-item-body">
@@ -85,9 +88,24 @@ export default function BlogPage() {
                                     )}
                                 </time>
 
-                                <h2>{bai.title}</h2>
+                                <p className="blog-item-author">
+                                    Người đăng: {bai.author}
+                                </p>
+
+                                <h2>
+                                    <Link to={`/blog/${bai.id}`}>
+                                        {bai.title}
+                                    </Link>
+                                </h2>
 
                                 <p>{bai.excerpt}</p>
+
+                                <Link
+                                    to={`/blog/${bai.id}`}
+                                    className="blog-item-more"
+                                >
+                                    Đọc tiếp →
+                                </Link>
                             </div>
                         </article>
                     ))}
