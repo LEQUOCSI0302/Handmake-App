@@ -9,7 +9,7 @@ function ProductDetailPage() {
     const { id } = useParams();
     const productId = Number(id);
     const [product, setProduct] = useState<Product>();
-
+    const [quantity, setQuantity] = useState(1);
     useEffect(() => {
         getProductById(productId).then((detail => {
             if(detail){
@@ -17,12 +17,26 @@ function ProductDetailPage() {
             }
         }))
     }, [productId]);
+
+    useEffect(() => {
+        setQuantity(1);
+    }, [productId]);
     if(!product) {
         return (
             <main className = "product-detail-page">
                 <p className={"product-detail-message"}>Đang tải sản phẩm</p>
             </main>
         );
+    }
+
+    function decreaseQuantity() {
+        setQuantity((n) => Math.max(1, n-1));
+    }
+    function increaseQuantity() {
+        if(!product){
+            return;
+        }
+        setQuantity((n) => Math.min(product.stock, n+1));
     }
     return (
         <main className = "product-detail-page">
@@ -50,9 +64,9 @@ function ProductDetailPage() {
                     </div>
                     <div className = "product-detail-actions">
                         <div className = "product-detail-quantity">
-                            <button type="button" aria-label="Giảm số lượng">-</button>
-                            <span>1</span>
-                            <button type="button" aria-label="Tăng số lượng">+</button>
+                            <button type="button" aria-label="Giảm số lượng" disabled={quantity <= 1} onClick={decreaseQuantity}>-</button>
+                            <span>{quantity}</span>
+                            <button type="button" aria-label="Tăng số lượng" disabled={quantity >= product.stock} onClick={increaseQuantity}>+</button>
                         </div>
                     </div>
                     <button className = "product-detail-add" type="submit">

@@ -10,7 +10,7 @@ import ProductListPage from "./pages/ProductListPage";
 import PolicyPage from "./pages/PolicyPage";
 import ContactPage from "./pages/contact/ContactPage.tsx";
 import BlogPage from "./pages/Blog/BlogPage.tsx";
-
+import ProductDetailPage from "./pages/product/ProductDetailPage.tsx";
 function App() {
     return (
         <div className="app">
