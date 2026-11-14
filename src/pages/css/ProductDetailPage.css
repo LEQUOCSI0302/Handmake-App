@@ -144,3 +144,24 @@
         font-size: 24px;
     }
 }
+.product-detail-related {
+    margin-top: 48px;
+}
+
+.product-detail-related h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: var(--text-dark);
+}
+
+.product-detail-related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-detail-related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

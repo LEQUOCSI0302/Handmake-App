@@ -2,24 +2,30 @@ import {Link, useParams} from "react-router-dom";
 import {use, useEffect, useState} from "react";
 import type {Product} from "../../types/product.ts";
 import {formatPrice} from "../../utils/formatPrice.ts";
-import {getProductById} from "../../services/productService.ts";
+import {getProductById, getProducts} from "../../services/productService.ts";
 import "../css/ProductDetailPage.css";
+import ProductCard from "../../components/ProductCard.tsx";
 
 function ProductDetailPage() {
     const { id } = useParams();
     const productId = Number(id);
     const [product, setProduct] = useState<Product>();
     const [quantity, setQuantity] = useState(1);
-    useEffect(() => {
-        getProductById(productId).then((detail => {
-            if(detail){
-                setProduct(detail);
-            }
-        }))
-    }, [productId]);
+    const [related, setRelated] = useState<Product[]>([]);
 
     useEffect(() => {
         setQuantity(1);
+        setRelated([]);
+        window.scrollTo({ top: 0 });
+    }, [productId]);
+
+    useEffect(() => {
+        Promise.all([getProductById(productId),getProducts()]).then(([detail, all]) =>{
+            if(detail) {
+                setProduct(detail);
+                setRelated(all.filter((p) => p.category === detail.category && p.id !== detail.id).slice(0, 4));
+            }
+        });
     }, [productId]);
     if(!product) {
         return (
@@ -77,6 +83,16 @@ function ProductDetailPage() {
 
                 </div>
             </section>
+            {related?.length > 0 &&(
+                <section className = "product-detail-related">
+                    <h2>Sản phẩm liên quan</h2>
+                    <div className="product-detail-related-grid">
+                        {related.map((p) => (
+                            <ProductCard key={p.id} product={p} />
+                        ))}
+                    </div>
+                </section>
+            )}
         </main>
     );
 }
