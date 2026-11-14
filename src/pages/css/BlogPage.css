@@ -1,0 +1,110 @@
+.blog-page {
+    min-height: 60vh;
+    padding: 48px 24px 64px;
+    background: var(--white);
+    color: #513d30;
+}
+
+.blog-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề trang */
+.blog-heading {
+    max-width: 680px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.blog-label {
+    margin-bottom: 12px;
+    color: var(--cocoa);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.blog-heading h1 {
+    margin-bottom: 16px;
+    font-size: 36px;
+}
+
+.blog-heading > p:last-child {
+    color: var(--toffee);
+    line-height: 1.7;
+}
+
+/* Danh sách bài viết */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Một bài viết */
+.blog-item {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--cream);
+    border-radius: 12px;
+}
+
+.blog-item-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.blog-item-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-item-body {
+    padding: 24px;
+}
+
+.blog-item-body time {
+    color: var(--toffee);
+    font-size: 13px;
+}
+
+.blog-item-body h2 {
+    margin: 12px 0;
+    font-size: 21px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.blog-item-body p {
+    color: var(--toffee);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* Máy tính bảng */
+@media (max-width: 900px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+    .blog-page {
+        padding: 32px 16px 48px;
+    }
+
+    .blog-heading h1 {
+        font-size: 30px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
