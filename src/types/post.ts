@@ -4,4 +4,6 @@ export interface Post {
     excerpt: string;
     image: string;
     date: string;
+    author: string;
+    content: string;
 }

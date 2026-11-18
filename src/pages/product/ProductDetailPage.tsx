@@ -2,20 +2,30 @@ import {Link, useParams} from "react-router-dom";
 import {use, useEffect, useState} from "react";
 import type {Product} from "../../types/product.ts";
 import {formatPrice} from "../../utils/formatPrice.ts";
-import {getProductById} from "../../services/productService.ts";
+import {getProductById, getProducts} from "../../services/productService.ts";
 import "../css/ProductDetailPage.css";
+import ProductCard from "../../components/ProductCard.tsx";
 
 function ProductDetailPage() {
     const { id } = useParams();
     const productId = Number(id);
     const [product, setProduct] = useState<Product>();
+    const [quantity, setQuantity] = useState(1);
+    const [related, setRelated] = useState<Product[]>([]);
 
     useEffect(() => {
-        getProductById(productId).then((detail => {
-            if(detail){
+        setQuantity(1);
+        setRelated([]);
+        window.scrollTo({ top: 0 });
+    }, [productId]);
+
+    useEffect(() => {
+        Promise.all([getProductById(productId),getProducts()]).then(([detail, all]) =>{
+            if(detail) {
                 setProduct(detail);
+                setRelated(all.filter((p) => p.category === detail.category && p.id !== detail.id).slice(0, 4));
             }
-        }))
+        });
     }, [productId]);
     if(!product) {
         return (
@@ -23,6 +33,16 @@ function ProductDetailPage() {
                 <p className={"product-detail-message"}>Đang tải sản phẩm</p>
             </main>
         );
+    }
+
+    function decreaseQuantity() {
+        setQuantity((n) => Math.max(1, n-1));
+    }
+    function increaseQuantity() {
+        if(!product){
+            return;
+        }
+        setQuantity((n) => Math.min(product.stock, n+1));
     }
     return (
         <main className = "product-detail-page">
@@ -50,9 +70,9 @@ function ProductDetailPage() {
                     </div>
                     <div className = "product-detail-actions">
                         <div className = "product-detail-quantity">
-                            <button type="button" aria-label="Giảm số lượng">-</button>
-                            <span>1</span>
-                            <button type="button" aria-label="Tăng số lượng">+</button>
+                            <button type="button" aria-label="Giảm số lượng" disabled={quantity <= 1} onClick={decreaseQuantity}>-</button>
+                            <span>{quantity}</span>
+                            <button type="button" aria-label="Tăng số lượng" disabled={quantity >= product.stock} onClick={increaseQuantity}>+</button>
                         </div>
                     </div>
                     <button className = "product-detail-add" type="submit">
@@ -63,6 +83,16 @@ function ProductDetailPage() {
 
                 </div>
             </section>
+            {related?.length > 0 &&(
+                <section className = "product-detail-related">
+                    <h2>Sản phẩm liên quan</h2>
+                    <div className="product-detail-related-grid">
+                        {related.map((p) => (
+                            <ProductCard key={p.id} product={p} />
+                        ))}
+                    </div>
+                </section>
+            )}
         </main>
     );
 }

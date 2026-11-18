@@ -9,8 +9,8 @@ import LoginPage from "./pages/LoginPage";
 import ProductListPage from "./pages/ProductListPage";
 import PolicyPage from "./pages/PolicyPage";
 import ContactPage from "./pages/contact/ContactPage.tsx";
+import BlogPage from "./pages/Blog/BlogPage.tsx";
 import ProductDetailPage from "./pages/product/ProductDetailPage.tsx";
-
 function App() {
     return (
         <div className="app">
@@ -24,6 +24,7 @@ function App() {
                 <Route path="/san-pham/:id" element={<ProductDetailPage />} />
                 <Route path="/lien-he" element={<ContactPage />} />
                 <Route path="/chinh-sach" element={<PolicyPage />} />
+                <Route path="/blog" element={<BlogPage />} />
                 <Route path="/chinh-sach/:policyId" element={<PolicyPage/>} />
             </Routes>
 
