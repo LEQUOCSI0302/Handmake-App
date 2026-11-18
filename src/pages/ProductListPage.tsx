@@ -6,15 +6,16 @@ import ProductCard from "../components/ProductCard";
 import "./css/ProductListPage.css";
 
 const TAT_CA = "Tất cả";
+const MAC_DINH = "mac-dinh";
 
 export default function ProductListPage() {
     const [products, setProducts] = useState<Product[]>([]);
     const [dangTai, setDangTai] = useState(true);
     const [loi, setLoi] = useState("");
     const [searchParams, setSearchParams] = useSearchParams();
-    const [sapXep, setSapXep] = useState("mac-dinh");
 
     const danhMuc = searchParams.get("danh-muc") || TAT_CA;
+    const sapXep = searchParams.get("sap-xep") || MAC_DINH;
 
     useEffect(() => {
         getProducts()
@@ -35,12 +36,14 @@ export default function ProductListPage() {
         sanPhamHienThi.sort((a, b) => b.price - a.price);
     }
 
-    function chonDanhMuc(ten: string) {
-        if (ten === TAT_CA) {
-            setSearchParams({});
+    function doiThamSo(ten: string, giaTri: string, giaTriMacDinh: string) {
+        const thamSoMoi = new URLSearchParams(searchParams);
+        if (giaTri === giaTriMacDinh) {
+            thamSoMoi.delete(ten);
         } else {
-            setSearchParams({ "danh-muc": ten });
+            thamSoMoi.set(ten, giaTri);
         }
+        setSearchParams(thamSoMoi);
     }
 
     function demSanPham(ten: string): number {
@@ -77,7 +80,7 @@ export default function ProductListPage() {
                                                     ? "product-sidebar-item active"
                                                     : "product-sidebar-item"
                                             }
-                                            onClick={() => chonDanhMuc(ten)}
+                                            onClick={() => doiThamSo("danh-muc", ten, TAT_CA)}
                                         >
                                             {ten}
                                             <span>{demSanPham(ten)}</span>
@@ -97,9 +100,11 @@ export default function ProductListPage() {
                                     Sắp xếp:
                                     <select
                                         value={sapXep}
-                                        onChange={(e) => setSapXep(e.target.value)}
+                                        onChange={(e) =>
+                                            doiThamSo("sap-xep", e.target.value, MAC_DINH)
+                                        }
                                     >
-                                        <option value="mac-dinh">Mặc định</option>
+                                        <option value={MAC_DINH}>Mặc định</option>
                                         <option value="gia-tang">Giá: thấp đến cao</option>
                                         <option value="gia-giam">Giá: cao đến thấp</option>
                                     </select>
