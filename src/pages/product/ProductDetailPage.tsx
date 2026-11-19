@@ -12,10 +12,11 @@ function ProductDetailPage() {
     const [product, setProduct] = useState<Product>();
     const [quantity, setQuantity] = useState(1);
     const [related, setRelated] = useState<Product[]>([]);
-
+    const [tab, setTab] = useState<"mota" | "danhgia">("mota");
     useEffect(() => {
         setQuantity(1);
         setRelated([]);
+        setTab("mota");
         window.scrollTo({ top: 0 });
     }, [productId]);
 
@@ -79,10 +80,42 @@ function ProductDetailPage() {
                         Thêm vào giỏ hàng
                     </button>
                     <p className = "product-detail-category">Loại hàng: {product.category}</p>
-                    <p className ="product-detail-description">{product.description}</p>
-
                 </div>
+
             </section>
+
+            <section className = "product-detail-lower">
+                <div className = "product-detail-tabs">
+                    <button className = {tab=="mota" ? "active":""} type="button" onClick={() => setTab("mota")}>Mô tả sản phẩm</button>
+                    <button className = {tab=="danhgia" ? "active" :""} type="button" onClick={()=> setTab("danhgia")}>Đánh giá</button>
+                </div>
+
+                {tab === "mota" ? (
+                    <div className = "product-detail-desc">
+                        <p className = "product-detail-description">{product.description}</p>
+                    </div>
+                ):(
+                    <div className ="product-detail-reviews">
+
+                        <p className ="product-detail-no-review">Chưa có đánh giá nào.</p>
+
+                        <form className = "product-detail-review-form">
+                            <h3>Viết đánh giá của bạn</h3>
+                            <div className = "product-detail-review-rate">
+                                {[1,2,3,4,5].map((n) => (
+                                    <button key={n} type="button" >★</button>
+                                ))}
+                            </div>
+                            <input placeholder="Tên của bạn"/>
+                            <input placeholder="Email của bạn"/>
+                            <textarea placeholder="Nhận xét của bạn về sản phẩm" rows={3}/>
+                            <button className ="product-detail-review-submit" type="submit">Gửi đánh giá</button>
+                        </form>
+                    </div>
+                )}
+
+            </section>
+
             {related?.length > 0 &&(
                 <section className = "product-detail-related">
                     <h2>Sản phẩm liên quan</h2>
