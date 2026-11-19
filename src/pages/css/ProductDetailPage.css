@@ -128,12 +128,6 @@
     color: var(--toffee);
 }
 
-.product-detail-description {
-    line-height: 1.6;
-    color: var(--text-light);
-    white-space: pre-line;
-}
-
 @media (max-width: 768px) {
     .product-detail-main {
         grid-template-columns: 1fr;
@@ -164,4 +158,93 @@
     .product-detail-related-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+.product-detail-lower {
+    margin-top: 48px;
+}
+.product-detail-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--latte);
+}
+.product-detail-tabs button {
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-gray);
+    cursor: pointer;
+}
+
+.product-detail-tabs button.active {
+    border-bottom-color: var(--toffee);
+    color: var(--toffee);
+}
+
+.product-detail-no-review {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+.product-detail-review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 1200px;
+    border: 1px solid var(--latte);
+    padding: 16px;
+}
+
+.product-detail-review-form h3 {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.product-detail-review-rate {
+    display: flex;
+    gap: 4px;
+}
+
+.product-detail-review-rate button {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: var(--latte);
+    cursor: pointer;
+}
+
+.product-detail-review-rate button.active {
+    color: var(--star);
+}
+
+.product-detail-review-form input,
+.product-detail-review-form textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--latte);
+    border-radius: 8px;
+    background: var(--white);
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.product-detail-review-form textarea {
+    resize: vertical;
+}
+
+.product-detail-review-submit {
+    align-self: flex-start;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: var(--toffee);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.product-detail-review-submit:hover {
+    background: var(--cocoa);
 }
