@@ -131,6 +131,37 @@
       "responseMode": null,
       "streamingMode": null,
       "streamingInterval": 0
+    },
+    {
+      "uuid": "1d0c13e2-65ce-42eb-8cbf-7fab005d8be1",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "reviews",
+      "responses": [
+        {
+          "uuid": "b46752af-4905-4c47-a456-bb71701adbdd",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "FILE",
+          "filePath": "./reviews.json",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
     }
   ],
   "rootChildren": [
@@ -149,6 +180,10 @@
     {
       "type": "route",
       "uuid": "abe5f5a7-0a60-490c-a682-fac29c51ef2b"
+    },
+    {
+      "type": "route",
+      "uuid": "1d0c13e2-65ce-42eb-8cbf-7fab005d8be1"
     }
   ],
   "proxyMode": false,
