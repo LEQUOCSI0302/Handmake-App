@@ -1,0 +1,98 @@
+[
+  {
+    "content": "Dây treo hình mèo dễ thương lắm, treo ở góc học tập nhìn là thấy vui. Gỗ mài mịn, không dằm tay.",
+    "date": "02/11/2026",
+    "id": 1,
+    "name": "Ngọc Anh",
+    "productId": 1,
+    "rating": 5
+  },
+  {
+    "content": "Mèo nâu xinh, dây treo chắc chắn. Mình treo thêm chìa khóa với thẻ ra vào, tiện mà vẫn đẹp.",
+    "date": "28/10/2026",
+    "id": 2,
+    "name": "Minh Tuấn",
+    "productId": 1,
+    "rating": 4
+  },
+  {
+    "content": "Cán muỗng làm như cành cây nhìn lạ mà đẹp, cầm vừa tay. Ăn súp hay khuấy cà phê đều thích.",
+    "date": "05/11/2026",
+    "id": 3,
+    "name": "Khánh Vy",
+    "productId": 2,
+    "rating": 5
+  },
+  {
+    "content": "Thuyền que gỗ dựng lên nhìn rất có hồn, để bàn làm việc ai cũng hỏi mua ở đâu.",
+    "date": "19/10/2026",
+    "id": 4,
+    "name": "Văn Đức",
+    "productId": 3,
+    "rating": 5
+  },
+  {
+    "content": "Khung bướm treo tường nhẹ nhàng, màu gỗ ấm. Phòng khách nhìn sang hẳn lên.",
+    "date": "08/11/2026",
+    "id": 5,
+    "name": "Thu Hằng",
+    "productId": 4,
+    "rating": 5
+  },
+  {
+    "content": "Dãy nhà nhiều màu treo mũ nón rất tiện, móc chắc, bắt vít lên tường dễ.",
+    "date": "25/10/2026",
+    "id": 6,
+    "name": "Hoàng Nam",
+    "productId": 5,
+    "rating": 4
+  },
+  {
+    "content": "Kệ nhiều ngăn để sách với đồ nhỏ, bàn học gọn hẳn. Gỗ dày dặn, không ọp ẹp.",
+    "date": "11/11/2026",
+    "id": 7,
+    "name": "Phương Linh",
+    "productId": 6,
+    "rating": 5
+  },
+  {
+    "content": "Mô hình phố dưới trăng nhìn thơ lắm, để kệ sách buổi tối bật đèn vàng là hết ý.",
+    "date": "30/10/2026",
+    "id": 8,
+    "name": "Trọng Nghĩa",
+    "productId": 7,
+    "rating": 5
+  },
+  {
+    "content": "Con dê mini khắc tỉ mỉ, để trên bàn làm việc nhìn vui mắt. Nhỏ mà chi tiết.",
+    "date": "14/11/2026",
+    "id": 9,
+    "name": "Thanh Tùng",
+    "productId": 10,
+    "rating": 5
+  },
+  {
+    "content": "Gấu ba tông màu lạ mắt, sơn đều không lem. Tặng bạn sinh nhật rất hợp.",
+    "date": "09/11/2026",
+    "id": 10,
+    "name": "Ngọc Anh",
+    "productId": 11,
+    "rating": 4
+  },
+  {
+    "content": "Mèo dáng bước đi nhìn có hồn, không cứng như tượng nhựa. Để bệ cửa sổ đẹp lắm.",
+    "date": "01/11/2026",
+    "id": 11,
+    "name": "Khánh Vy",
+    "productId": 13,
+    "rating": 5
+  },
+  {
+    "content": "Tượng sừng cong chi tiết, ai mê mô hình nhìn là thích. Đế đứng vững, không chông chênh.",
+    "date": "06/11/2026",
+    "id": 12,
+    "name": "Minh Tuấn",
+    "productId": 15,
+    "rating": 4
+  }
+]
