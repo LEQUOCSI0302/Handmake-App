@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { Product } from "../types/product";
 import { getProducts } from "../services/productService";
+import { normalizeText } from "../utils/normalizeText";
 import ProductCard from "../components/ProductCard";
 import "./css/ProductListPage.css";
 
@@ -16,6 +17,7 @@ export default function ProductListPage() {
 
     const danhMuc = searchParams.get("danh-muc") || TAT_CA;
     const sapXep = searchParams.get("sap-xep") || MAC_DINH;
+    const [tuKhoa, setTuKhoa] = useState(searchParams.get("tim") || "");
 
     useEffect(() => {
         getProducts()
@@ -27,7 +29,9 @@ export default function ProductListPage() {
     const cacDanhMuc = [TAT_CA, ...new Set(products.map((p) => p.category))];
 
     const sanPhamHienThi = products.filter(
-        (p) => danhMuc === TAT_CA || p.category === danhMuc
+        (p) =>
+            (danhMuc === TAT_CA || p.category === danhMuc) &&
+            normalizeText(p.name).includes(normalizeText(tuKhoa))
     );
 
     if (sapXep === "gia-tang") {
@@ -43,7 +47,12 @@ export default function ProductListPage() {
         } else {
             thamSoMoi.set(ten, giaTri);
         }
-        setSearchParams(thamSoMoi);
+        setSearchParams(thamSoMoi, { replace: ten === "tim" });
+    }
+
+    function timKiem(giaTri: string) {
+        setTuKhoa(giaTri);
+        doiThamSo("tim", giaTri, "");
     }
 
     function demSanPham(ten: string): number {
@@ -96,6 +105,27 @@ export default function ProductListPage() {
                                     Hiển thị {sanPhamHienThi.length} sản phẩm
                                 </p>
 
+                                <div className="product-search">
+                                    <i className="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                    <input
+                                        type="text"
+                                        placeholder="Tìm theo tên sản phẩm..."
+                                        aria-label="Tìm theo tên sản phẩm"
+                                        value={tuKhoa}
+                                        onChange={(e) => timKiem(e.target.value)}
+                                    />
+                                    {tuKhoa && (
+                                        <button
+                                            type="button"
+                                            className="product-search-clear"
+                                            onClick={() => timKiem("")}
+                                            aria-label="Xóa từ khóa"
+                                        >
+                                            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                    )}
+                                </div>
+
                                 <label className="product-sort">
                                     Sắp xếp:
                                     <select
@@ -113,7 +143,9 @@ export default function ProductListPage() {
 
                             {sanPhamHienThi.length === 0 ? (
                                 <p className="product-page-message">
-                                    Không có sản phẩm nào trong danh mục này.
+                                    {tuKhoa
+                                        ? `Không tìm thấy sản phẩm nào với từ khóa "${tuKhoa}".`
+                                        : "Không có sản phẩm nào trong danh mục này."}
                                 </p>
                             ) : (
                                 <div className="product-page-grid">
