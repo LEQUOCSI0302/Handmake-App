@@ -1,0 +1,137 @@
+/* Tái sử dụng các biến CSS từ dự án của bạn: --white, --cream, --toffee, --cocoa */
+
+.blog-detail-page {
+    min-height: 60vh;
+    padding: 48px 24px 80px;
+    background: var(--white, #ffffff);
+    color: #513d30;
+}
+
+/* Container hẹp hơn trang danh sách để tối ưu trải nghiệm đọc (dòng text không quá dài) */
+.blog-detail-container {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.blog-detail-nav {
+    margin-bottom: 32px;
+}
+
+.blog-back-link {
+    display: inline-block;
+    color: var(--cocoa, #81614a);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.blog-back-link:hover {
+    color: var(--toffee, #9f815b);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.blog-detail-loading {
+    text-align: center;
+    color: var(--toffee, #9f815b);
+}
+
+.blog-detail-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.blog-detail-meta {
+    margin-bottom: 16px;
+    color: #766456;
+    font-size: 14px;
+}
+
+.meta-divider {
+    margin: 0 12px;
+    color: var(--cream, #e8dfd8);
+}
+
+.blog-detail-title {
+    font-size: 40px;
+    line-height: 1.3;
+    margin: 0;
+    color: #513d30;
+}
+
+.blog-detail-image {
+    width: 100%;
+    margin-bottom: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cream, #e8dfd8);
+}
+
+.blog-detail-image img {
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Định dạng nội dung bài viết HTML (Rich Text) */
+.blog-detail-content {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #513d30;
+}
+
+.blog-detail-content p {
+    margin-bottom: 24px;
+}
+
+.blog-detail-content h2 {
+    font-size: 26px;
+    margin: 40px 0 16px;
+    color: #513d30;
+}
+
+.blog-detail-content strong {
+    color: var(--cocoa, #81614a);
+}
+
+.blog-detail-content blockquote {
+    margin: 32px 0;
+    padding: 24px 32px;
+    background: #fdfaf7; /* Nền nhạt cho blockquote */
+    border-left: 4px solid var(--toffee, #9f815b);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: var(--cocoa, #81614a);
+    font-size: 18px;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+    .blog-detail-page {
+        padding: 24px 16px 48px;
+    }
+
+    .blog-detail-title {
+        font-size: 28px;
+    }
+
+    .blog-detail-image {
+        margin-bottom: 32px;
+    }
+
+    .blog-detail-content {
+        font-size: 16px;
+    }
+
+    .blog-detail-content h2 {
+        font-size: 22px;
+        margin: 32px 0 12px;
+    }
+
+    .blog-detail-content blockquote {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+}
