@@ -147,6 +147,25 @@
     box-shadow: 0 0 0 3px var(--focus);
 }
 
+.product-search-clear {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-gray);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.product-search-clear:hover {
+    background: var(--cream);
+    color: var(--cocoa);
+}
+
 .product-sort {
     display: flex;
     align-items: center;

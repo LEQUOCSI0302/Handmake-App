@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { Product } from "../types/product";
 import { getProducts } from "../services/productService";
+import { normalizeText } from "../utils/normalizeText";
 import ProductCard from "../components/ProductCard";
 import "./css/ProductListPage.css";
 
@@ -13,10 +14,10 @@ export default function ProductListPage() {
     const [dangTai, setDangTai] = useState(true);
     const [loi, setLoi] = useState("");
     const [searchParams, setSearchParams] = useSearchParams();
-    const [tuKhoa, setTuKhoa] = useState("");
 
     const danhMuc = searchParams.get("danh-muc") || TAT_CA;
     const sapXep = searchParams.get("sap-xep") || MAC_DINH;
+    const [tuKhoa, setTuKhoa] = useState(searchParams.get("tim") || "");
 
     useEffect(() => {
         getProducts()
@@ -30,7 +31,7 @@ export default function ProductListPage() {
     const sanPhamHienThi = products.filter(
         (p) =>
             (danhMuc === TAT_CA || p.category === danhMuc) &&
-            p.name.toLowerCase().includes(tuKhoa.trim().toLowerCase())
+            normalizeText(p.name).includes(normalizeText(tuKhoa))
     );
 
     if (sapXep === "gia-tang") {
@@ -46,7 +47,12 @@ export default function ProductListPage() {
         } else {
             thamSoMoi.set(ten, giaTri);
         }
-        setSearchParams(thamSoMoi);
+        setSearchParams(thamSoMoi, { replace: ten === "tim" });
+    }
+
+    function timKiem(giaTri: string) {
+        setTuKhoa(giaTri);
+        doiThamSo("tim", giaTri, "");
     }
 
     function demSanPham(ten: string): number {
@@ -106,8 +112,18 @@ export default function ProductListPage() {
                                         placeholder="Tìm theo tên sản phẩm..."
                                         aria-label="Tìm theo tên sản phẩm"
                                         value={tuKhoa}
-                                        onChange={(e) => setTuKhoa(e.target.value)}
+                                        onChange={(e) => timKiem(e.target.value)}
                                     />
+                                    {tuKhoa && (
+                                        <button
+                                            type="button"
+                                            className="product-search-clear"
+                                            onClick={() => timKiem("")}
+                                            aria-label="Xóa từ khóa"
+                                        >
+                                            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                    )}
                                 </div>
 
                                 <label className="product-sort">
