@@ -1,15 +1,50 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { getPostById } from "../../services/postService.ts";
+import type { Post } from "../../types/post.ts";
 import "../css/BlogDetailPage.css";
 
 export default function BlogDetailPage() {
     const { id } = useParams();
 
-    const [dangTai, setDangTai] = useState(false);
+    const [baiViet, setBaiViet] = useState<Post | null>(null);
+    const [dangTai, setDangTai] = useState(true);
     const [loi, setLoi] = useState("");
 
     useEffect(() => {
+        let conHoatDong = true;
 
+        async function taiChiTiet() {
+            if (!id) return;
+
+            try {
+                setDangTai(true);
+                const duLieu = await getPostById(id);
+
+                if (conHoatDong) {
+                    if (duLieu) {
+                        setBaiViet(duLieu);
+                        setLoi("");
+                    } else {
+                        setLoi("Không tìm thấy bài viết này.");
+                    }
+                }
+            } catch (err) {
+                if (conHoatDong) {
+                    setLoi("Lỗi khi tải bài viết. Vui lòng thử lại sau.");
+                }
+            } finally {
+                if (conHoatDong) {
+                    setDangTai(false);
+                }
+            }
+        }
+
+        taiChiTiet();
+
+        return () => {
+            conHoatDong = false;
+        };
     }, [id]);
 
     return (
@@ -29,39 +64,33 @@ export default function BlogDetailPage() {
                     <p className="blog-detail-status error" role="alert">{loi}</p>
                 )}
 
-                {!dangTai && !loi && (
+                {!dangTai && !loi && baiViet && (
                     <article className="blog-detail-article">
                         <header className="blog-detail-header">
                             <div className="blog-detail-meta">
-                                <time dateTime="2026-11-22">22/11/2026</time>
+                                <time dateTime={baiViet.date}>
+                                    {new Date(baiViet.date).toLocaleDateString("vi-VN")}
+                                </time>
                                 <span className="meta-divider">•</span>
-                                <span>Người đăng:Admin</span>
+                                <span>Người đăng: {baiViet.author}</span>
                             </div>
 
                             <h1 className="blog-detail-title">
-                                Tiêu đề bài viết
+                                {baiViet.title}
                             </h1>
                         </header>
 
                         <div className="blog-detail-image">
                             <img
-                                src="https://placehold.co/800x500/e8dfd8/81614a?text=Anh"
-                                alt="Ảnh bìa bài viết"
+                                src={baiViet.image}
+                                alt={baiViet.title}
                             />
                         </div>
 
                         <div className="blog-detail-content">
-                            <p>đoạn mở đầu của bài viết</p>
-
-                            <h2>1. Giao diện</h2>
-                            <p>nội dung</p>
-
-                            <blockquote>
-                               Trích dẫn
-                            </blockquote>
-
-                            <h2>2.Kết luận</h2>
-                            <p>nội dung</p>
+                            {baiViet.content?.split('\n\n').map((doanVan, index) => (
+                                <p key={index}>{doanVan}</p>
+                            ))}
                         </div>
                     </article>
                 )}
