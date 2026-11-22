@@ -23,7 +23,7 @@ function App() {
                 <Route path="/gioi-thieu" element={<AboutPage />} />
                 <Route path="/tai-khoan" element={<LoginPage />} />
                 <Route path="/san-pham" element={<ProductListPage />} />
-                <Route path="/san-pham/:id" element={<ProductDetailPage/>} />
+                <Route path="/san-pham/:id" element={<ProductDetailPage />} />
                 <Route path="/lien-he" element={<ContactPage />} />
                 <Route path="/chinh-sach" element={<PolicyPage />} />
                 <Route path="/blog" element={<BlogPage />} />

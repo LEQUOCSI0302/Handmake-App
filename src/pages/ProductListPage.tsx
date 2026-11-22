@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { Product } from "../types/product";
 import { getProducts } from "../services/productService";
+import { normalizeText } from "../utils/normalizeText";
 import ProductCard from "../components/ProductCard";
 import "./css/ProductListPage.css";
 
 const TAT_CA = "Tất cả";
+const MAC_DINH = "mac-dinh";
 
 export default function ProductListPage() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -14,6 +16,8 @@ export default function ProductListPage() {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const danhMuc = searchParams.get("danh-muc") || TAT_CA;
+    const sapXep = searchParams.get("sap-xep") || MAC_DINH;
+    const [tuKhoa, setTuKhoa] = useState(searchParams.get("tim") || "");
 
     useEffect(() => {
         getProducts()
@@ -25,15 +29,30 @@ export default function ProductListPage() {
     const cacDanhMuc = [TAT_CA, ...new Set(products.map((p) => p.category))];
 
     const sanPhamHienThi = products.filter(
-        (p) => danhMuc === TAT_CA || p.category === danhMuc
+        (p) =>
+            (danhMuc === TAT_CA || p.category === danhMuc) &&
+            normalizeText(p.name).includes(normalizeText(tuKhoa))
     );
 
-    function chonDanhMuc(ten: string) {
-        if (ten === TAT_CA) {
-            setSearchParams({});
+    if (sapXep === "gia-tang") {
+        sanPhamHienThi.sort((a, b) => a.price - b.price);
+    } else if (sapXep === "gia-giam") {
+        sanPhamHienThi.sort((a, b) => b.price - a.price);
+    }
+
+    function doiThamSo(ten: string, giaTri: string, giaTriMacDinh: string) {
+        const thamSoMoi = new URLSearchParams(searchParams);
+        if (giaTri === giaTriMacDinh) {
+            thamSoMoi.delete(ten);
         } else {
-            setSearchParams({ "danh-muc": ten });
+            thamSoMoi.set(ten, giaTri);
         }
+        setSearchParams(thamSoMoi, { replace: ten === "tim" });
+    }
+
+    function timKiem(giaTri: string) {
+        setTuKhoa(giaTri);
+        doiThamSo("tim", giaTri, "");
     }
 
     function demSanPham(ten: string): number {
@@ -70,7 +89,7 @@ export default function ProductListPage() {
                                                     ? "product-sidebar-item active"
                                                     : "product-sidebar-item"
                                             }
-                                            onClick={() => chonDanhMuc(ten)}
+                                            onClick={() => doiThamSo("danh-muc", ten, TAT_CA)}
                                         >
                                             {ten}
                                             <span>{demSanPham(ten)}</span>
@@ -81,13 +100,52 @@ export default function ProductListPage() {
                         </aside>
 
                         <div className="product-main">
-                            <p className="product-page-count">
-                                Hiển thị {sanPhamHienThi.length} sản phẩm
-                            </p>
+                            <div className="product-toolbar">
+                                <p className="product-page-count">
+                                    Hiển thị {sanPhamHienThi.length} sản phẩm
+                                </p>
+
+                                <div className="product-search">
+                                    <i className="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                    <input
+                                        type="text"
+                                        placeholder="Tìm theo tên sản phẩm..."
+                                        aria-label="Tìm theo tên sản phẩm"
+                                        value={tuKhoa}
+                                        onChange={(e) => timKiem(e.target.value)}
+                                    />
+                                    {tuKhoa && (
+                                        <button
+                                            type="button"
+                                            className="product-search-clear"
+                                            onClick={() => timKiem("")}
+                                            aria-label="Xóa từ khóa"
+                                        >
+                                            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                    )}
+                                </div>
+
+                                <label className="product-sort">
+                                    Sắp xếp:
+                                    <select
+                                        value={sapXep}
+                                        onChange={(e) =>
+                                            doiThamSo("sap-xep", e.target.value, MAC_DINH)
+                                        }
+                                    >
+                                        <option value={MAC_DINH}>Mặc định</option>
+                                        <option value="gia-tang">Giá: thấp đến cao</option>
+                                        <option value="gia-giam">Giá: cao đến thấp</option>
+                                    </select>
+                                </label>
+                            </div>
 
                             {sanPhamHienThi.length === 0 ? (
                                 <p className="product-page-message">
-                                    Không có sản phẩm nào trong danh mục này.
+                                    {tuKhoa
+                                        ? `Không tìm thấy sản phẩm nào với từ khóa "${tuKhoa}".`
+                                        : "Không có sản phẩm nào trong danh mục này."}
                                 </p>
                             ) : (
                                 <div className="product-page-grid">
