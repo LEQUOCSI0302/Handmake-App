@@ -148,7 +148,27 @@ function ProductDetailPage() {
 
                 {tab === "mota" ? (
                     <div className = "product-detail-desc">
-                        <p className = "product-detail-description">{product.description}</p>
+                        {product.description.split("\n\n").map((block,i)=>{
+                            if(block.startsWith("# ")){
+                                return <h3 key = {i}>{block.slice(2)}</h3>
+                            }
+                            if(block.startsWith("- ")){
+                                return(
+                                    <ul key = {i}>
+                                        {block.split("\n").map((line,j)=>(
+                                            <li key={j}>{line.slice(2)}</li>
+                                        ))}
+                                    </ul>
+                                );
+                            }
+                            return(
+                                <p className="product-detail-description" key={i}>
+                                    {block}
+
+                                </p>
+                            );
+                        })}
+
                     </div>
                 ):(
                     <div className ="product-detail-reviews">
