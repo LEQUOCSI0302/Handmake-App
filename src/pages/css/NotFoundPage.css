@@ -33,9 +33,60 @@
 }
 
 .not-found-text {
-    margin-bottom: 28px;
+    margin-bottom: 12px;
     line-height: 1.6;
     color: var(--text-light);
+}
+
+.not-found-path {
+    margin-bottom: 28px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.not-found-path code {
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: var(--cream);
+    color: var(--cocoa);
+    word-break: break-all;
+}
+
+.not-found-search {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.not-found-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--latte);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    background: var(--white);
+    color: var(--text-dark);
+    font-size: 15px;
+    outline: none;
+}
+
+.not-found-search input:focus {
+    border-color: var(--toffee);
+    box-shadow: 0 0 0 3px var(--focus);
+}
+
+.not-found-search button {
+    width: 52px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background: var(--toffee);
+    color: var(--white);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.not-found-search button:hover {
+    background: var(--cocoa);
 }
 
 .not-found-actions {
@@ -44,20 +95,34 @@
     gap: 12px;
 }
 
-.not-found-button {
+.not-found-button,
+.not-found-button-outline {
     display: inline-block;
     padding: 12px 28px;
-    border: 2px solid var(--toffee);
     border-radius: 50px;
-    background: var(--toffee);
-    color: var(--white);
     font-weight: 700;
     text-decoration: none;
+}
+
+.not-found-button {
+    border: 2px solid var(--toffee);
+    background: var(--toffee);
+    color: var(--white);
 }
 
 .not-found-button:hover {
     border-color: var(--cocoa);
     background: var(--cocoa);
+}
+
+.not-found-button-outline {
+    border: 2px solid var(--toffee);
+    background: var(--white);
+    color: var(--toffee);
+}
+
+.not-found-button-outline:hover {
+    background: var(--cream);
 }
 
 @media (max-width: 600px) {
@@ -75,5 +140,9 @@
 
     .not-found-box h1 {
         font-size: 24px;
+    }
+
+    .not-found-actions {
+        flex-direction: column;
     }
 }
